@@ -1,0 +1,137 @@
+[
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/290878/Realme-c30s-den-temp-600x600.jpg",
+     "name": " Realme C30s (4GB/64GB) ",
+     "price": "2890000",
+     "numstar": 5,
+     "numreview": "4",
+     "numsale": "9",
+     "id": "1"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/261888/realme-c35-thumb-new-600x600.jpg",
+     "name": "Realme C35 64GB",
+     "price": "3890000",
+     "numstar": 3.5,
+     "numreview": "427",
+     "numsale": "9",
+     "id": "2"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/253401/realme-c21-y-black-600x600.jpg",
+     "name": "Realme C21-Y 3GB ",
+     "price": "2590000",
+     "numstar": 4,
+     "numreview": "42",
+     "numsale": "29",
+     "id": "3"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/265313/realme-c25y-64gb-thumb-600x600.jpeg",
+     "name": "Realme C25Y 64GB ",
+     "price": "3960000",
+     "numstar": 3.6,
+     "numreview": "26",
+     "numsale": "21",
+     "id": "4"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/233135/realme-8-silver-600x600.jpg",
+     "name": "Realme 8",
+     "price": "6290000",
+     "numstar": 3.6,
+     "numreview": "245",
+     "numsale": "13",
+     "id": "5"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/7077/287056/realme-watch-3-den-thumb-600x600.jpeg",
+     "name": "Realme Watch 3 45mm dây silicone",
+     "price": "1990000",
+     "numstar": null,
+     "numreview": "null",
+     "numsale": "null",
+     "id": "6"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/261957/realme-c11-2021-2gb-32gb-xanh-600x600.jpg",
+     "name": "Realme C11 (2021) 2GB/32GB ",
+     "price": "2990000",
+     "numstar": 4.0,
+     "numreview": "48",
+     "numsale": "10",
+     "id": "7"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/275732/realme-9i-den-thumb-600x600.jpg",
+     "name": "Realme 9i (4GB/64GB) ",
+     "price": "4390000",
+     "numstar": 4.4,
+     "numreview": "20",
+     "numsale": "21 ",
+     "id": "8"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/7077/244683/realme-watch-2-pro-day-silicone-xam-thumb-600x600.jpeg",
+     "name": "Realme Watch 2 pro dây silicone đen",
+     "price": 1990000,
+     "numstar": 3.9,
+     "numreview": "17",
+     "numsale": "10",
+     "id": "9"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/290877/Realme-c30s-xanh-temp-600x600.jpg",
+     "name": "Realme C30s (2GB/32GB)",
+     "price": 2290000,
+     "numstar": 5,
+     "numreview": "3",
+     "numsale": "8",
+     "id": "10"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/275632/realme-9-4g-vang-thumb-1-600x600.jpg",
+     "name": "Realme 9",
+     "price": 6990000,
+     "numstar": 3.9,
+     "numreview": "65",
+     "numsale": "10%",
+     "id": "11"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/278343/realme-c35-black-thumb-600x600.jpg",
+     "name": "Realme C35 128GB ",
+     "price": "4390000",
+     "numstar": 3.6,
+     "numreview": "20",
+     "numsale": "12",
+     "id": "12"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/253402/realme-c21-y-blue-600x600.jpg",
+     "name": "Realme C21-Y 4GB",
+     "price": "3190000",
+     "numstar": 3.6,
+     "numreview": "22",
+     "numsale": "20",
+     "id": "13"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/250615/realme-c25y-blue-600x600.jpg",
+     "name": "Realme C25Y 128GB ",
+     "price": "4190000",
+     "numstar": 5390000,
+     "numreview": "30",
+     "numsale": "10",
+     "id": "14"
+    },
+    {
+     "img": "https://cdn.tgdd.vn/Products/Images/42/250615/realme-c25y-blue-600x600.jpg",
+     "name": "Realme 9i (6GB/128GB) ",
+     "price": "5390000",
+     "numstar": 4.7,
+     "numreview": "13",
+     "numsale": "15",
+     "id": "15"
+    }
+]
