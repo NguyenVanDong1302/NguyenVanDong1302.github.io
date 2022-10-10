@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       `;
               })
               .join(" ")
-          : "<div>Dữ liệu trống</div>";
+          : "<div> </div>";
       }
       showData(products, data);
 

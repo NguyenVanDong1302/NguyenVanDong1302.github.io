@@ -48,7 +48,7 @@ body {
 .main-content-title {
   color: #2899E2;
   margin-bottom: 15px;
-  /* margin: 19px 0px; */
+  margin: 19px 0px;
   font-size: 15px;
 }
 
@@ -116,13 +116,14 @@ body {
   width: 800px;
   height: 533px;
   position: relative;
+  
   overflow: hidden;
 }
 
 #slider-wrap ul#slider {
   width: 800px;
   height: 533px;
-
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
@@ -130,6 +131,7 @@ body {
 
 #slider-wrap ul#slider li {
   float: left;
+  /* float: left; */
   position: relative;
   width: 800px;
   height: 533px;
@@ -645,13 +647,13 @@ sup {
 
 .detail-right-access-items {
   display: flex;
-  justify-content: space-between;
+  justify-content:flex-start;
   width: 800px;
   padding-top: 20px;
 }
 
 .detail-right-access-item {
-  width: 200px;
+  width: 150px;
   height: auto;
 
 }
@@ -769,7 +771,9 @@ sup {
 
 /* ============================================== assess ========================== */
 .detail-left-assess {
+
   width: 800px;
+  margin: 15px;
   /* border: 1px solid #f1f1f1; */
 }
 
@@ -1221,4 +1225,31 @@ sup {
   font-weight: normal;
   display: inline-block;
   margin: 5px 0 0 10px;
+}
+.detail-right-price{
+  display: flex;
+  align-items: center;
+}
+.right-item-price{
+  color: #d0021c;
+  font-size: 20px;
+  font-weight: bold;
+}
+.detail-right-price span {
+  color: #666;
+  font-size: 16px;
+  text-decoration-line: line-through;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 10px;
+}
+.detail-right-price-sale {
+  color: #d0021c;
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.detail-left-comments {
+  margin-top: 20px;
 }
