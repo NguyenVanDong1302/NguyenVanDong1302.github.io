@@ -5,28 +5,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3426ec3618.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="order.css">
 
     <title>Thế giới di động</title>
 </head>
 
 <body>
 
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="false">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="show-cart table"></table>
+                    <div>Tổng giá: <span class="total-cart"></span>đ</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <button type="button" class="btn btn-primary"><a href="order.html">Mua ngay</a></button>
+                </div>
+                <button class="clear-cart btn btn-danger">Xoá tất cả sản phẩm</button>
+            </div>
+        </div>
+    </div>
+
     <header>
         <img src="img/image_star/1200-44-1200x44-7.png" alt="">
     </header>
     <nav>
-        <div class="container" id="container">
+        <div class="container header_ct">
             <ul>
                 <li> <a href="#"> <img style="width: 150px" src="img/image_star/800px-The_gioi_di_dong_logo.svg.png"
                             alt=""></a>
                 </li>
                 <li id="address-form"><a href="#"> Hà Nội <i class="fa-solid fa-angle-down"></i></a></li>
                 <li><input type="text" placeholder="Bạn tìm gì....."> <i class="fa-solid fa-magnifying-glass"></i></li>
-                <li><a href=""></a><button><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng</button></li>
+                <li><a href=""></a><button><i class="fa-light fa-cart-shopping"></i> Giỏ hàng</button></li>
                 <li><a href="">Lịch sử <br> đơn hàng</a></li>
                 <li><a href="">24h Công nghệ </a></li>
                 <li><a href="">Hỏi đáp </a></li>
@@ -59,10 +97,10 @@
         <div class="container">
             <div class="menu-bar-container">
                 <ul>
-                    <li><a href=""><i class="fa-solid fa-mobile"></i> Điện thoại</a></li>
-                    <li> <a href=""><i class="fa-solid fa-laptop"></i> Laptop</a></li>
-                    <li><a href=""><i class="fa-solid fa-tablet"></i> Tablet</a></li>
-                    <li><a href=""><i class="fa-solid fa-headphones"></i>Phụ kiện <i
+                    <li><a href=""><i class="fa-light fa-phone"></i> Điện thoại</a></li>
+                    <li> <a href=""><i class="fa-light fa-laptop"></i> Laptop</a></li>
+                    <li><a href=""><i class="fa-regular fa-tablet"></i> Tablet</a></li>
+                    <li><a href=""><i class="fa-light fa-headphones"></i>Phụ kiện <i
                                 class="fa-solid fa-angle-down"></i></a>
                         <div class="submenu">
                             <ul>
@@ -96,13 +134,42 @@
                                     <li> <a href=""> Micro thu âm điện thoại </a></li>
                                 </ul>
                             </div>
+                            <div class="flexsubmenu">
+                                <ul>
+                                    <p>THIẾT BỊ NHÀ THÔNG MINH</p>
+                                    <li> <a href=""> Khoá điện tử</a></li>
+                                    <li> <a href=""> Camera, webcam</a></li>
+                                    <li> <a href=""> Máy chiếu </a></li>
+                                    <li> <a href=""> TV Box</a></li>
+                                    <li> <a href=""> Ổ cắm, bóng đèn thông minh </a></li>
+                                </ul>
+                                <ul>
+                                    <p>THIẾT BỊ LƯU TRỮ</p>
+                                    <li> <a href="">Ổ cứng di động</a></li>
+                                    <li> <a href=""> Thẻ nhớ</a></li>
+                                    <li> <a href=""> USB </a></li>
+                                </ul>
+                            </div>
 
                         </div>
 
                     </li>
-                    <li><a href=""> <i class="fa-solid fa-watch"></i> Đồng hồ</a></li>
-                    <li><a href=""><i class="fa-solid fa-desktop"></i>PC, Máy in <i
-                                class="fa-solid fa-angle-down"></i></a></li>
+                    <li><a href=""> <i class="fa-light fa-clock"></i> Đồng hồ</a></li>
+                    <li><a href=""><i class="fa-light fa-computer"></i>PC, Máy in <i
+                                class="fa-solid fa-angle-down"></i></a>
+
+                        <div class="submenu submenubonus">
+                            <ul>
+                                <li> <a href="">Máy in</a></li>
+                                <li> <a href="">Mực in</a></li>
+                                <li> <a href="">Màn hình máy tính</a></li>
+                                <li> <a href="">Máy tính để bàn</a></li>
+                            </ul>
+                        </div>
+
+
+
+                    </li>
                     <li><a href="">Máy cũ giá rẻ</a></li>
                     <li><a href="">Sim, thẻ cào</a></li>
                     <li><a href="">Dịch vụ tiện ích</a></li>
@@ -125,19 +192,19 @@
     <div class="slideshow-container">
 
         <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
+        <div class="mySlides">
             <img src="img/image_star/slide1.png">
             <img src="img/image_star/slide4.png">
 
         </div>
 
-        <div class="mySlides fade">
+        <div class="mySlides">
             <img src="img/image_star/silde2.png">
             <img src="img/image_star/silde5.png">
 
         </div>
 
-        <div class="mySlides fade">
+        <div class="mySlides">
             <img src="img/image_star/slide3.png">
             <img src="img/image_star/silde6.png">
 
@@ -186,11 +253,11 @@
                                 <li>2.890.000<sup>đ</sup> <a href="">-17%</a></li>
                                 <li>Quà 400.000<sup>đ</sup></li>
                                 <li>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
                                 </li>
                             </div>
                         </div>
@@ -206,10 +273,10 @@
                                 <li><a href="">4.290.000</a><sup>đ</sup></li>
                                 <li>3.990.000<sup>đ</sup> <a href="">-9%</a></li>
                                 <li>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </li>
                             </div>
@@ -227,11 +294,11 @@
                                 <li>2.590.000<sup>đ</sup> <a href="">-29%</a></li>
                                 <li>Quà 400.000<sup>đ</sup></li>
                                 <li>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
                                 </li>
                             </div>
                         </div>
@@ -248,11 +315,11 @@
                                 <li>3.990.000<sup>đ</sup> <a href="">-27%</a></li>
                                 <!-- <li>Quà 400.000<sup>đ</sup></li> -->
                                 <li>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
                                 </li>
                             </div>
                         </div>
@@ -269,9 +336,9 @@
                                 <li>3.690.000<sup>đ</sup> <a href="">-21%</a></li>
                                 <li></li>
                                 <li>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </li>
@@ -292,11 +359,11 @@
                                 <li>6.290.000<sup>đ</sup> <a href="">-13%</a></li>
                                 <!-- <li>Quà 400.000<sup>đ</sup></li> -->
                                 <li>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
                                 </li>
                             </div>
                         </div>
@@ -313,11 +380,11 @@
                                 <li>4.390.000<sup>đ</sup> <a href="">-20%</a></li>
                                 <!-- <li>Quà 400.000<sup>đ</sup></li> -->
                                 <li>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
                                 </li>
                             </div>
                         </div>
@@ -334,11 +401,11 @@
                                 <li>6.390.000<sup>đ</sup> <a href="">-21%</a></li>
                                 <!-- <li>Quà 400.000<sup>đ</sup></li> -->
                                 <li>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
                                 </li>
                             </div>
                         </div>
@@ -355,10 +422,10 @@
                                 <li>2.290.000<sup>đ</sup> <a href="">-7%</a></li>
                                 <li>Quà 400.000<sup>đ</sup></li>
                                 <li>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </li>
                             </div>
@@ -376,11 +443,11 @@
                                 <li>4.390.000<sup>đ</sup> <a href="">-17%</a></li>
                                 <!-- <li>Quà 400.000<sup>đ</sup></li> -->
                                 <li>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
                                 </li>
                             </div>
                         </div>
@@ -401,28 +468,7 @@
             <a href="#">Xem tất cả sản phẩm</a>
         </div>
 
-        <!-- <section class="trend-product">
-                <div class="trend-product-title">
-                    <h2>XU HƯỚNG MUA SẮM</h2>
-                </div>
-                <div class="trend-product-items">
-                    <div class="trend-product-item">
-                        <img src="img/slider3/anh1.png" alt="">
-                    </div>
-                    <div class="trend-product-item">
-                        <img src="img/slider3/anh1.png" alt="">
-                    </div>
-                    <div class="trend-product-item">
-                        <img src="img/slider3/anh1.png" alt="">
-                    </div>
-                    <div class="trend-product-item">
-                        <img src="img/slider3/anh1.png" alt="">
-                    </div>
-                    <div class="trend-product-item">
-                        <img src="img/slider3/anh1.png" alt="">
-                    </div>
-                </div>
-            </section> -->
+
         <div class="trend-product-content">
             <div class="trend-product-content-title">
                 <h2>Săn Sale Online Mỗi Ngày</h2>
@@ -526,37 +572,37 @@
 
 
         <!-- ===================================================================== -->
-        <select name="" id="sort">
-            <option value="0">
-                Sắp xếp theo
-            </option>
-            <option value="1">
-                Sắp xếp theo thứ tự từ A - Z
-            </option>
-            <option value="2">
-                Sắp xếp theo thứ tự từ Z - A
-            </option>
-        </select>
+
+
+
         <div class="slider-product-one-content-items-content">
-        
+            <div class="logic-search-sort">
+
+
+                <input class="inputx" type="text" name="search" value="" id="" placeholder="Tìm kiếm..."
+                    autocomplete="off" />
+                <select class="select-sort" onchange="sort()" name="" id="sort" style="width:200px">
+                    <option value="0">
+                        Sắp xếp theo
+                    </option>
+                    <option value="1">
+                        <p> Sắp xếp từ A - Z <i class="fas fa-sort-alpha-down"></i> </p>
+                    </option>
+                    <option value="2">
+                        Sắp xếp từ Z - A <i class="fas fa-sort-alpha-up"></i>
+                    </option>
+                </select>
+            </div>
 
             <section class="list-product">
-                
-         
-                <input class="inputx" type="text" name="search" value="" id="" placeholder="search by name"
-                    autocomplete="off" />
+
+
+
                 <div class="list-product-items">
 
-                    <!-- <div class="list-product-item"> -->
-                    <!-- <a href=""> <img
-                            src="https://cdn.tgdd.vn/Products/Images/42/247364/samsung-galaxy-m53-nau-thumb-600x600.jpg"
-                            alt=""> </a> -->
-                    <!-- <div class="list-product-item-text">
-                        <li>Samsung Galaxy M53 </li>
-                        <li>12.490.000 <sup>đ</sup></li>
-                        <li>3.9 <i class="fa-regular fa-star"></i> </li>
-                    </div> -->
-                    <!-- </div> -->
+                </div>
+                <div class="paging_product">
+                    <ul id="pagination"></ul>
                 </div>
 
             </section>
@@ -602,7 +648,19 @@
                 </div>
             </div>
 
-
+            <div class="main-24h">
+                <div class="24h-cong-nghe">
+                        <p>24H CÔNG NGHỆ</p>
+                        <div class="24h-cong-nghe-items">
+                                <div class="24h-cong-nghe-item">
+                                    <img src="https://cdn.tgdd.vn/Files/2022/04/11/1425191/anhdaidien_800x450-200x200.jpg" alt="">
+                                </div>
+                        </div>
+                </div>
+                <div class="24h-img">
+                        <img src="https://cdn.tgdd.vn/2022/03/banner/DesktopTGDD-285x350.png" alt="">
+                </div>
+            </div>
             <div class="footer-text">
                 <span>© 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày
                     02/01/2007.

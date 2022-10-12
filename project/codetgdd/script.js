@@ -39,47 +39,34 @@ setInterval(function () {
   ).style.right = index * 100 + "%";
 }, 30000);
 
-// ==================== api =======================
 
-// const api_url = "https://632fc662591935f3c8851f34.mockapi.io/api/apiphone";
 
-// // Defining async function
-// var newdt;
-// async function open(url) {
-//   // Storing response
-//   const response = await fetch(url);
-
-//   // Storing data in form of JSON
-//   newdt = await response.json();
-//   console.log(newdt);
-//   // if (response) {
-//   //   newdt = response
-//     console.log(newdt)
-//   let acb = document.querySelector(".list-product-items");
-//   let html = "";
-//   newdt.forEach((item, index) => {
-//     console.log(index);
-//       // if(index < 5){
-//         let htmlinner = `
-//         <div class="list-product-item">
-//         <a href=""> <img src="${item.img}" alt=""> </a>
-//         <div class="list-product-item-text">
-//             <li>${item.name}</li>
-//             <li id="jsprice">${item.price}₫</li>
-//             <li>${item.star}<i class="fa-solid fa-star"></i>
-//             <span> (${item.numreview}) </span>
-//             </li>
-//         </div>
-//     </div>
-//   `;
-//   html += htmlinner;
-//       // }
-//   });
-//   acb.innerHTML = html;
-// }
-// // Calling that async function
 
 // ========================================== api hot =================
+let dataProduct = null;
+const products = document.querySelector(".list-product-items");
+function showData(products, data) {
+  products.innerHTML = data.length
+    ? data
+        .map((item) => {
+          return `
+                <div class="list-product-item">
+                <div class="list-product-item-img">
+                <a href="detail.html?id=${item.id}"> <img src="${item.img}" alt=""> </a>
+                </div>
+                <div class="list-product-item-text">
+                    <li class="clname">${item.name}</li>
+                    <li class="jsprice"> ${parseInt(item.price).toLocaleString()}₫</li>
+                    <li>${item.star}<i class="fa-solid fa-star"></i>
+                    <span> (${item.numreview}) </span>
+                    </li>
+                </div>
+            </div>
+                `;
+        })
+        .join(" ")
+    : "<div>Dữ liệu trống</div>";
+}
 document.addEventListener("DOMContentLoaded", () => {
   const BASE_URL = "https://632fc662591935f3c8851f34.mockapi.io/api/apiphone";
 
@@ -87,27 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.json())
     .then((data) => {
       console.log("Success:", data);
-      const products = document.querySelector(".list-product-items");
-      function showData(products, data) {
-        products.innerHTML = data.length
-          ? data
-              .map((item) => {
-                return `
-                      <div class="list-product-item">
-                      <a href="detail.html?id=${item.id}"> <img src="${item.img}" alt=""> </a>
-                      <div class="list-product-item-text">
-                          <li class="clname">${item.name}</li>
-                          <li class="jsprice"> ${parseInt(item.price).toLocaleString()}₫</li>
-                          <li>${item.star}<i class="fa-solid fa-star"></i>
-                          <span> (${item.numreview}) </span>
-                          </li>
-                      </div>
-                  </div>
-                      `;
-              })
-              .join(" ")
-          : "<div> </div>";
-      }
+
       showData(products, data);
 
       // thực hiện chức năng search
@@ -123,25 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
         showData(products, filterData);
       });
 
-      
-    const sortBy = document.getElementById("sort")
-    let sortData = [];
-    const namex = document.querySelectorAll('.clname')
-    console.log(namex);
-    if(sortBy){
-      sortBy.onchange = (event) =>{
-        console.log(event.target.value);
-        const {value} = event.target;
-        if(value === 1 ){
-          sortData = [...data].sort()
-        }else if(value === 2){
-          sortData = [...data].sort(compareByName).reverse()
-        }else{
-          sortData = data 
-        }
-        // element.innerHTML = mapDatas(sortData)
-      };
-    }
+      dataProduct = data
+    
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -261,4 +211,36 @@ function showSlides() {
   }
   slides[slideIndex - 1].style.display = "flex";
   setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+function sort() {
+  let value = document.querySelector("#sort");
+  if (dataProduct && value.value == 1) {
+    let dataFilter = [...dataProduct];
+    let newData = dataFilter.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
+    showData(products, newData);
+  } else if (dataProduct && value.value == 2) {
+    let dataFilter = [...dataProduct];
+    let newData = dataFilter.sort((a, b) => {
+      if (a.name < b.name) {
+        return 1;
+      }
+      if (a.name > b.name) {
+        return -1;
+      }
+      return 0;
+    });
+    showData(products, newData);
+  } else if (dataProduct && value.value == 0) {
+    console.log(dataProduct);
+    showData(products, dataProduct);
+  }
 }

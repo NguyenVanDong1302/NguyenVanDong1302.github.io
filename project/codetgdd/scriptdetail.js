@@ -447,3 +447,8 @@ function pagination() {
   $("#pagination-wrap ul li:eq(" + pos + ")").addClass("active");
 }
 }
+
+
+// console.log(iddetail);
+
+// =============================================================

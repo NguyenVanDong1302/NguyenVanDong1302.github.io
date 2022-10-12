@@ -1,0 +1,9 @@
+@media only screen and (max-width: 46.1875em){
+    body{
+        background-color: black;
+    }
+    header {
+        background-color: #000000;
+        text-align: center;
+      }
+}
