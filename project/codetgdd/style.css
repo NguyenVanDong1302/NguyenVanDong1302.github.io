@@ -5,7 +5,14 @@
   font-family: Arial, Helvetica, sans-serif;
 
 }
-
+a {
+  text-decoration: none;
+  list-style: none;
+}
+a:hover {
+  text-decoration: none;
+  list-style: none;
+}
 
 @media (max-width:46em) {
   header {
@@ -21,9 +28,7 @@ header {
   background-color: #FFD400;
   text-align: center;
 }
-body {
-  background-color: #f3f3f3;
-}
+
 .container {
   max-width: 1200px;
   height: 40px;
@@ -43,6 +48,8 @@ a {
 
 nav {
   background-color: #FFD400;
+  height: 50px;
+  padding-bottom: 5px;
 }
 
 nav ul {
@@ -135,7 +142,7 @@ nav ul li:nth-child(8):hover a {
 .menu-bar {
   /* max-height: 100%; */
   background-color: #FFD400;
-
+  height: 45px;
 
 }
 
@@ -174,7 +181,6 @@ nav ul li:nth-child(8):hover a {
 }
 
 .menu-bar-container>ul>li:nth-child(8)::before {
-
   position: absolute;
   content: "Giảm 5%";
   display: block;
@@ -187,6 +193,7 @@ nav ul li:nth-child(8):hover a {
   font-size: 10px;
   padding-left: 3px;
   padding-top: 3px;
+  z-index: 2;
   color: white;
 
 
@@ -199,9 +206,9 @@ nav ul li:nth-child(8):hover a {
   height: 7px;
   width: 7px;
   display: block;
-  top: 10px;
+  top: 7px;
   right: 34px;
-  z-index: 2;
+  /* z-index: 2; */
   transform: rotate(45deg);
 }
 
@@ -975,4 +982,40 @@ color: #FB6E2E;
   padding: 8px 8px 8px 13px;
   width: 300px;
   margin-top: 19px;
+}
+.main-24h{
+  display: flex;
+}
+
+.x24h-cong-nghe
+{
+  float: left;
+  width: 895px;
+  /* overflow: hidden; */
+  background: #fff;
+  margin-right: 20px;
+  border-radius: 12px;
+}
+.x24h-cong-nghe-items{
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 18px;
+}
+
+.x24h-cong-nghe-item{
+  float: left;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 33%;
+  margin-right: 10px;
+}
+.x24h-cong-nghe-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  height: auto;
+  border: 0;
 }

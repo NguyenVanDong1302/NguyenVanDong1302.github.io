@@ -24,34 +24,50 @@
     <link rel="stylesheet" href="order.css">
 
     <title>Thế giới di động</title>
+
 </head>
 
-<body>
+<body style="background-color: #f3f3f3">
 
-    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="false">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table class="show-cart table"></table>
-                    <div>Tổng giá: <span class="total-cart"></span>đ</div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        Đóng
-                    </button>
-                    <button type="button" class="btn btn-primary"><a href="order.html">Mua ngay</a></button>
-                </div>
-                <button class="clear-cart btn btn-danger">Xoá tất cả sản phẩm</button>
-            </div>
+    <div
+    class="modal fade"
+    id="cart"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="false"
+  >
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          <table class="show-cart table"></table>
+          <div>Tổng giá: <span class="total-cart"></span>đ</div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+            Đóng
+          </button>
+          <button type="button" class="btn btn-primary"><a href="order.html">Mua ngay</a></button>
+        </div>
+        <button class="clear-cart btn btn-danger">Xoá tất cả sản phẩm</button>
+      </div>
     </div>
+  </div>
 
     <header>
         <img src="img/image_star/1200-44-1200x44-7.png" alt="">
@@ -64,7 +80,10 @@
                 </li>
                 <li id="address-form"><a href="#"> Hà Nội <i class="fa-solid fa-angle-down"></i></a></li>
                 <li><input type="text" placeholder="Bạn tìm gì....."> <i class="fa-solid fa-magnifying-glass"></i></li>
-                <li><a href=""></a><button><i class="fa-light fa-cart-shopping"></i> Giỏ hàng</button></li>
+                <li><a href=""></a><button data-toggle="modal" data-target="#cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Giỏ hàng <span class="total-count"></span>
+                  </button></li>
                 <li><a href="">Lịch sử <br> đơn hàng</a></li>
                 <li><a href="">24h Công nghệ </a></li>
                 <li><a href="">Hỏi đáp </a></li>
@@ -610,6 +629,30 @@
                 <span>Xem thêm</span>
             </div>
 
+            <div class="main-24h">
+                <div class="x24h-cong-nghe">
+                        <p>24H CÔNG NGHỆ</p>
+                        <div class="x24h-cong-nghe-items">
+                                <div class="x24h-cong-nghe-item">
+                                    <img src="https://cdn.tgdd.vn/Files/2022/04/11/1425191/anhdaidien_800x450-200x200.jpg" alt="">
+                                    <p>Cách định dạng các mục trong Microsoft Word trên máy tính bằng phím tắt</p>
+                                </div>
+                                <div class="x24h-cong-nghe-item">
+                                    <img src="https://cdn.tgdd.vn/Files/2022/08/22/1458529/laptopgiamgiacucmanhthang8_800x450-200x200.jpg" alt="">
+                                    <p>Back to school' cùng những mẫu laptop giảm giá cực ngon chào năm học 2022 nào!</p>
+                                </div>
+                                <div class="x24h-cong-nghe-item">
+                                    <img src="https://cdn.tgdd.vn/Files/2022/08/08/1454004/anhbia1_800x450-200x200.jpg" alt="">
+                                    <p> Cách chuyển đổi dạng văn bản trên Windows 11 cực dễ với Image To Text Windows</p>
+                                </div>
+                        </div>
+                </div>
+                <div class="x24h-img">
+                        <img src="https://cdn.tgdd.vn/2022/03/banner/DesktopTGDD-285x350.png" alt="">
+                </div>
+            </div>
+
+
             <div class="footer">
                 <div class="list-footer">
                     <div class="list-footer-items">
@@ -648,19 +691,7 @@
                 </div>
             </div>
 
-            <div class="main-24h">
-                <div class="24h-cong-nghe">
-                        <p>24H CÔNG NGHỆ</p>
-                        <div class="24h-cong-nghe-items">
-                                <div class="24h-cong-nghe-item">
-                                    <img src="https://cdn.tgdd.vn/Files/2022/04/11/1425191/anhdaidien_800x450-200x200.jpg" alt="">
-                                </div>
-                        </div>
-                </div>
-                <div class="24h-img">
-                        <img src="https://cdn.tgdd.vn/2022/03/banner/DesktopTGDD-285x350.png" alt="">
-                </div>
-            </div>
+           
             <div class="footer-text">
                 <span>© 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày
                     02/01/2007.
