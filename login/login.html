@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Đăng nhập</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<script src="https://kit.fontawesome.com/3426ec3618.js" crossorigin="anonymous"></script>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+	<meta name="google-signin-client_id" content="255493421171-e687lfvdn1er25hnsr4oj24859sjqvdq.apps.googleusercontent.com">
+<!--===============================================================================================-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+<!--===============================================================================================-->
+	
+
+</head>
+<body style="background-color: #000000;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-43">
+						<i><b>thegioididong.com</b></i>
+					</span>
+
+					<span class="login100-form-title p-b-43">
+						ĐĂNG NHẬP
+					</span>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate = "Không được để trống">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Tên đăng nhập hoặc Email</span>
+					</div>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate="Không được để trống">
+						<input class="input100" type="password" name="pass">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Mật khẩu</span>
+					</div>
+
+					<div class="flex-sb-m w-full p-t-3 p-b-32">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Nhớ đăng nhập
+							</label>
+						</div>
+
+						<div>
+							<a href="#" class="txt1">
+								Quên mật khẩu
+							</a>
+						</div>
+					</div>
+			
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							ĐĂNG NHẬP
+						</button>
+					</div>
+
+					</br>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							ĐĂNG KÝ
+						</button>
+					</div>
+					
+					<div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+						hoặc đăng nhập bằng
+						</span>
+					</div>
+
+					<div class="login100-form-social flex-c-m">
+						<!-- <a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+							<i class="fa-brands fa-google" aria-hidden="true"></i>
+						</a> -->
+						
+
+						<!-- <a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+							<i class="fa fa-facebook-f" aria-hidden="true"></i>
+						</a>
+
+						<a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a> -->
+					</div>
+					
+				</form>
+
+				<div class="login100-more" style="background-image: url('images/bglogin.jpg');">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<!-- Login Google -->
+<!--===============================================================================================-->
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+	<div class="data">
+		<p>Name</p>
+		<p id="name"></p>
+		<p>Image</p>
+		<img id="image" class="rounded-circle" width="100" height="100" />
+		<p>Email</p>
+		<p id="email"></p>
+		<button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+	</div> 
+<!--===============================================================================================-->
+
+	<!-- LINK -->
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+<!--===============================================================================================-->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+<!--===============================================================================================-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+<!--===============================================================================================-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+</html>
