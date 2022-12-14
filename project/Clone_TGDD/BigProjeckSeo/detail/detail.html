@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="styledetail.css">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3426ec3618.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+
+    <link rel="stylesheet" href="../index/style.css">
+    <link rel="stylesheet" href="../order.css">
+    <link rel="stylesheet" href="./responsiveDetail.css">
+
+</head>
+
+<body>
+    <div class="main-xxxxxx">
+        <div class="menu-bars-reponsive">
+            <div class="button-close-menu-bars"><span>X Đóng</span></div>
+            <div class="menu-category-items">
+                <ul class="list-menu-category-items">
+                    <li>Điện thoại</li>
+                    <li>Laptop</li>
+                    <li>Tablet</li>
+                    <li>Phụ kiện</li>
+                    <li>Đồng hồ thông minh</li>
+                    <li>Máy tính bộ</li>
+                    <li>Màn hình máy tính</li>
+                    <li>Máy in</li>
+                    <li>Mực in</li>
+                    <li>Đòng hồ thời trang</li>
+                    <li>Sạc dự phòng</li>
+                    <li>Tai nghe</li>
+                    <li>Máy cũ giá rẻ</li>
+                    <li>Sim, thẻ cào</li>
+                    <li>Dịch vụ, tiện ích</li>
+                </ul>
+            </div>
+
+            <div class="group-category-items">
+                <div class="group-product-new">
+                    <p>Nhóm hàng mới</p>
+
+                    <ul class="group-product-new-items">
+                        <li>Máy chiếu</li>
+                        <li>Thiết bị nhà thông minh</li>
+                        <li>Màn hình máy tính</li>
+                        <li>Thẻ cào giảm đến 3%</li>
+                    </ul>
+
+                </div>
+                <div class="group-product-new">
+                    <p class="technogory-world-title">Thế giới công nghệ</p>
+                    <ul class="group-product-new-items">
+                        <li>24h Công nghệ</li>
+                        <li>Game App</li>
+                        <li>Hỏi đáp</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-menu-bars">
+                <ul>
+                    <li><a href="#">Lịch sử mua hàng</a></li>
+                    <li>Tổng đài 1800.1060 (7:00 - 22:00)</li>
+                    <li>Xem 3375 siêu thị (8:00 - 22:00) </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="test-width"></div> -->
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="false">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="show-cart table"></table>
+                    <div>Tổng giá: <span class="total-cart"></span>đ</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <button type="button" class="btn btn-primary"><a href="order.html">Mua ngay</a></button>
+                </div>
+                <button class="clear-cart btn btn-danger">Xoá tất cả sản phẩm</button>
+            </div>
+        </div>
+    </div>
+    <header>
+        <img src="img/image_star/1200-44-1200x44-7.png" alt="">
+    </header>
+    <nav>
+        <div class="container" id="container">
+            <ul class="list-categorys">
+                <li>
+                    <a href="../index/homePage.html" class="header__logo">
+                        <i class="iconnewglobal-logo mobile"></i>
+                    </a>
+                </li>
+
+                <li id="address-form">
+                    <i class="icon-map-header fa-regular fa-location-dot"></i>
+                    <a href="#"> Hà Nội </a>
+                    <i class="icon-map-header2 fa-solid fa-angle-down"></i>
+
+                </li>
+                <li><input type="text" placeholder="Bạn tìm gì....."> <i class="fa-solid fa-magnifying-glass"></i></li>
+                <li><a href=""></a><button data-toggle="modal" data-target="#cart">
+                        <i class="fa-light fa-cart-shopping"></i>
+                        <span class="title-cart">Giỏ hàng </span>
+                        <span class="total-count"></span>
+                    </button></li>
+                <li><a href="">Lịch sử đơn hàng</a></li>
+                <li><a href="../article/article.html">24h Công nghệ </a></li>
+                <li><a href="../../login/login.html">Đăng nhập / Đăng ký </a></li>
+                <li><a href="">Game app </a></li>
+            
+                <li class="button-menu-bars"><i class="iconnewglobal-menu"></i>
+                </li>
+                <div class="address-form">
+                    <div class="address-form-content">
+                        <h2>Chọn địa chỉ nhận hàng <span id="ad-close">X Đóng</span></h2>
+                        <form action="">
+                            <p>Chọn đầy đủ địa chỉ nhận hàng để biết chính xác thời gian giao hàng</p>
+                            <select name="calc_shipping_provinces" required="">
+                                <option value="">Tỉnh / Thành phố</option>
+                            </select>
+                            <select name="calc_shipping_district" required="">
+                                <option value="">Quận / Huyện</option>
+                            </select>
+                            <input class="billing_address_1" name="" type="hidden" value="">
+                            <input class="billing_address_2" name="" type="hidden" value="">
+                            <input type="number" placeholder="Nhập số điện thoại">
+                            <input type="text" placeholder="Số nhà, Tên đường">
+                            <button>Xác nhận</button>
+                        </form>
+                    </div>
+                </div>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <section class="menu-bar">
+        <div class="container">
+            <div class="menu-bar-container">
+                <ul>
+                    <li><a href=""><i class="icon-of-menu-bar fa-light fa-phone"></i> Điện thoại</a></li>
+                    <li> <a href=""><i class="icon-of-menu-bar fa-light fa-laptop"></i> Laptop</a></li>
+                    <li><a href=""><i class="icon-of-menu-bar fa-light fa-tablet"></i> Tablet</a></li>
+                    <li><a href=""><i class="icon-of-menu-bar fa-light fa-headphones"></i>Phụ kiện <i
+                                class="icon-of-menu-bar fa-solid fa-angle-down"></i></a>
+                        <div class="submenu">
+                            <ul>
+                                <p>PHỤ KIỆN DI ĐỘNG</p>
+                                <li> <a href=""> Sạc dự phòng </a></li>
+                                <li> <a href=""> Sạc, cáp </a></li>
+                                <li> <a href=""> Ốp lưng điện thoại </a></li>
+                                <li> <a href=""> Ốp lưng máy tính bảng </a></li>
+                                <li> <a href=""> Miếng dán màn hình </a></li>
+                                <li> <a href=""> Gậy chụp ảnhm, Gimbal </a></li>
+                                <li> <a href=""> Giá đỡ điện thoại </a></li>
+                                <li> <a href=""> Đế, móc điện thoại </a></li>
+                                <li> <a href=""> Túi chống nước </a></li>
+                                <li> <a href=""> Túi đựng AirPods </a></li>
+                                <li> <a href=""> Airtag </a></li>
+                                <li> <a href=""> Phụ kiện Tablet </a></li>
+                            </ul>
+                            <div class="flexsubmenu">
+                                <ul>
+                                    <p>PHỤ KIỆN LAPTOP</p>
+                                    <li> <a href=""> Chuột, bàn phím </a></li>
+                                    <li> <a href=""> Balo, túi chống </a></li>
+                                    <li> <a href=""> Giá đỡ laptop </a></li>
+                                    <li> <a href=""> Phầm mềm </a></li>
+                                </ul>
+                                <ul>
+                                    <p>THIẾT BỊ ÂM THANH</p>
+                                    <li> <a href=""> Tai nghe </a></li>
+                                    <li> <a href=""> Loa</a></li>
+                                    <li> <a href=""> Micro thu âm điện thoại </a></li>
+                                </ul>
+                            </div>
+                            <div class="flexsubmenu">
+                                <ul>
+                                    <p>THIẾT BỊ NHÀ THÔNG MINH</p>
+                                    <li> <a href=""> Khoá điện tử</a></li>
+                                    <li> <a href=""> Camera, webcam</a></li>
+                                    <li> <a href=""> Máy chiếu </a></li>
+                                    <li> <a href=""> TV Box</a></li>
+                                    <li> <a href=""> Ổ cắm, bóng đèn thông minh </a></li>
+                                </ul>
+                                <ul>
+                                    <p>THIẾT BỊ LƯU TRỮ</p>
+                                    <li> <a href="">Ổ cứng di động</a></li>
+                                    <li> <a href=""> Thẻ nhớ</a></li>
+                                    <li> <a href=""> USB </a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </li>
+                    <li><a href=""> <i class="icon-of-menu-bar fa-light fa-clock"></i> Đồng hồ</a></li>
+                    <li><a href=""><i class="icon-of-menu-bar fa-light fa-computer"></i>PC, Máy in <i
+                                class="icon-of-menu-bar fa-solid fa-angle-down"></i></a>
+
+                        <div class="submenu submenubonus">
+                            <ul>
+                                <li> <a href="">Máy in</a></li>
+                                <li> <a href="">Mực in</a></li>
+                                <li> <a href="">Màn hình máy tính</a></li>
+                                <li> <a href="">Máy tính để bàn</a></li>
+                            </ul>
+                        </div>
+
+
+
+                    </li>
+                    <li><a href="">Máy cũ giá rẻ</a></li>
+                    <li><a href="">Sim, thẻ cào</a></li>
+                    <li><a href="">Dịch vụ tiện ích</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+    <div class="main-content">
+        <div class="detail-top">
+
+        </div>
+        <!-- ==================================================== -->
+        <div class="test-id-detail">
+
+        </div>
+
+
+        <div class="main-detail">
+            <div class="detail-left">
+                <div class="wapper-api">
+                    <div id="wrapper">
+                        <div id="slider-wrap" class="slider-wrap swiper">
+                            <ul class="swiper-wrapper" id="slider">
+                            </ul>
+
+                            <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
+                            <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
+                            <div id="counter">
+                            </div>
+
+                            <div id="pagination-wrap">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="slider-wrap-mini">
+                            <ul id="slider-mini">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-left-items-title">
+                    <div class="detail-left-title-items">
+                        <div class="detail-left-title-item">
+                            <i class="fa-solid fa-rotate-right"></i>
+                            <span>
+                                Hư gì đổi nấy 12 tháng tại 3318 siêu thị toàn quốc (miễn phí tháng đầu) <a href="#">Xem
+                                    chi tiết</a></span>
+
+                        </div>
+                        <div class="detail-left-title-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Bảo hành chính hãng điện thoại 1 năm tại các trung tâm bảo hành hãng
+                                <a href="#">Xem địa chỉ bảo hành</a></span>
+                        </div>
+                    </div>
+
+
+                    <div class="detail-left-title-items">
+                        <div class="detail-left-title-item">
+                            <i class="fa-solid fa-box-open"></i>
+                            <span>Bộ sản phẩm gồm: Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Lightning - Type C
+                                <a href="#">Xem hình</a></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="detail-left-sale-items">
+
+                </div>
+
+                <div class="detail-right-access">
+                    <!-- list product sale pk  -->
+
+
+                </div>
+
+                <div class="main-post-items">
+                    <div class="detail-left-dt">
+
+                    </div>
+                    <div class="posts-item">
+
+                    </div>
+                    <div class="add-view">Xem thêm <i class="fa-solid fa-caret-right"></i></div>
+                </div>
+
+                <div class="detail-left-comments">
+
+                    <div class="detail-left-assess">
+                        <div class="detail-left-assess-top">
+
+                        </div>
+
+                        <div class="detail-left-assess-star">
+                            <span>4.1</span>
+                            <div class="star-main">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <p>241 đánh giá</p>
+                        </div>
+
+                        <div class="detail-left-timing ">
+                            <li>
+                                <p>5</p><i class="fa-solid fa-star "></i>
+                                <div class="timeline-star fivestar" bis_skin_checked="1">
+                                    <p class="timing" style="width: 48%"></p>
+                                </div>
+                                <span>48%</span>
+                            </li>
+                            <li>
+                                <p>4</p><i class="fa-solid fa-star"></i>
+                                <div class="timeline-star" bis_skin_checked="1">
+                                    <p class="timing" style="width: 25%"></p>
+                                </div>
+                                <span>25%</span>
+                            </li>
+                            <li>
+                                <p>3</p><i class="fa-solid fa-star"></i>
+                                <div class="timeline-star" bis_skin_checked="1">
+                                    <p class="timing" style="width: 13%"></p>
+                                </div>
+                                <span>13%</span>
+                            </li>
+                            <li>
+                                <p>2</p><i class="fa-solid fa-star"></i>
+                                <div class="timeline-star" bis_skin_checked="1">
+                                    <p class="timing" style="width: 4%"></p>
+                                </div>
+                                <span>4%</span>
+                            </li>
+                            <li>
+                                <p>1</p><i class="fa-solid fa-star"></i>
+                                <div class="timeline-star" bis_skin_checked="1">
+                                    <p class="timing" style="width: 10%"></p>
+                                </div>
+                                <span>10%</span>
+                            </li>
+                        </div>
+
+
+                        <div class="detail-left-comment">
+                            <div class="detail-left-comment-name">
+                                <span>Như</span>
+                                <div class="detail-left-stick">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <p>Đã mua tại TGDD</p>
+                                </div>
+                            </div>
+                            <div class="detail-left-comment-star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+
+
+                            </div>
+
+                            <div class="detail-left-comment-likes">
+                                <div class="detail-left-comment-like">
+                                    <i class="fa-regular fa-thumbs-up"></i>
+                                    <p>Hữu ích</p>
+                                    <i class="fa-regular fa-comment"></i>
+                                    <p>Thảo luận</p>
+                                </div>
+                                <div class="detail-left-comment-story">
+                                    Đã dùng khoảng 1 tuần
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail-left-comment">
+                            <div class="detail-left-comment-name">
+                                <span>Phạm Văn Lâm</span>
+                                <div class="detail-left-stick">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <p>Đã mua tại TGDD</p>
+                                </div>
+                            </div>
+                            <div class="detail-left-comment-star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="detail-left-comment-title">
+                                Nhân viên Tâm ở Điện máy xanh tại 24 Quang Trung, TP. Quảng Ngãi phục vụ rất tốt, tôi
+                                rất hài lòng. Máy iPhone dùng tốt, mượt
+                            </div>
+                            <div class="detail-left-comment-likes">
+                                <div class="detail-left-comment-like">
+                                    <i class="fa-regular fa-thumbs-up"></i>
+                                    <p>Hữu ích</p>
+                                    <i class="fa-regular fa-comment"></i>
+                                    <p>Thảo luận</p>
+                                </div>
+                                <div class="detail-left-comment-story">
+                                    Đã dùng khoảng 1 tuần
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-left-comment-btn-items">
+                        <div class="detail-left-comment-btn-item">
+                            <i class="fa-regular fa-star"></i>
+                            <p>
+                                Viết đánh giá
+                            </p>
+                        </div>
+                        <div class="detail-left-comment-btn-item">
+                            <p>
+                                Xem 292 đánh giá
+                            </p>
+                            <i class="fa-solid fa-caret-right"></i>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="detail-left-write-comment">
+                    <textarea id="content" name="content" cols="" rows="5"></textarea>
+                    <div class="detail-left-send">
+                        <div class="detail-left-send-img">
+                            <span> <i class="fa-solid fa-camera"></i> Gửi ảnh</span>
+                            <span>Quy định đăng bình luận</span>
+                        </div>
+
+                        <div class="detail-left-send-img">
+                            <button>Gửi</button>
+                        </div>
+
+                    </div>
+                    <div class="detail-left-soluong-comment">
+                        <span>3.632 Bình luận</span>
+                    </div>
+
+                    <div class="detail-left-search-comment">
+                        <input type="text" placeholder="Tìm kiếm theo nội dung, người gửi...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+
+                <div class="detail-left-show-comment listcomment">
+                    <div class="detail-left-show-comment-item">
+                        <div class="detail-left-show-comment-item-title">
+                            <p>C</p>
+                            <span>Mạnh Cường</span>
+                        </div>
+                        <div class="detail-left-show-question">
+                            Bên shop có hổ trợ lên đời máy kh ạ
+                        </div>
+                        <div class="detail-left-actionuser">
+                            <p>Trả lời</p> - 14 giờ trước
+                        </div>
+                    </div>
+                </div>
+                <div class="listreply" id="r52701900" bis_skin_checked="1">
+                    <div class="reply " id="52703949" data-parent="52701900" bis_skin_checked="1">
+                        <div class="rowuser" bis_skin_checked="1">
+                            <a>
+                                <strong>Kim Hằng</strong><b class="qtv">Quản trị viên</b>
+                            </a>
+                        </div>
+                        <div class="cont" bis_skin_checked="1">Chào anh<br>Hiện tại bên em chỉ nhận thu cũ đổi mới đối
+                            với những sản phẩm mua tại cửa hàng thôi nhé anh, mình có thể mang máy ra cửa để được định
+                            giá chính xác ạ<br>Thông tin đến anh !&nbsp;
+
+                            <div class="actionuser">
+                                <a href="javascript:void(0)" class="respondent">Trả lời</a>
+                                <a class="favor satis cmthl">
+                                    <i class="iconcom-like"></i>Hài lòng<span></span></a>
+                                <a href="javascript:unsatisfiedCmt(52703949);" class="favor satis cmtkhl">
+                                    <i class="iconcom-unlike"></i>Không hài lòng<span></span></a>
+                                <a class="time">8 giờ trước </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================================================================================== -->
+
+
+            <div class="detail-right" id="detail-right">
+                <div class="main-option">
+                    <div class="option-capacity">
+                        <ul class="option-capacity-items">
+                            <!-- <li class="capacity-item-1 active-capacity">128G</li>
+                            <li class="capacity-item-2">256G</li>
+                            <li class="capacity-item-3">512G</li>
+                            <li class="capacity-item-4">1t</li> -->
+                        </ul>
+                    </div>
+                    <div class="option-color">
+                        <ul class="option-color-items">
+                            <!-- <li class="color-item-1 active-color">Vàng</li>
+                            <li class="color-item-2">Đen</li>
+                            <li class="color-item-3">Tím</li> -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="detail-right-title">
+                    <span>Giá tại </span>
+                    <span>Hà Nội <i class="fa-solid fa-sort-down"></i></span>
+                </div>
+
+                <div class="detail-right-price">
+                </div>
+
+
+                <div class="detail-right-img">
+
+                </div>
+
+                <div class="block-promo">
+                    <div class="block-promo-top">
+                        <h1>Khuyến mãi</h1>
+                        <span>Giá và khuyến mãi dự kiến áp dụng đến 23:00 | 30/09</span>
+                    </div>
+                    <div class="block-promo-content">
+                        <div class="block-promo-content-item">
+                            <span>1</span>
+                            <span>Giảm 20% gói Bảo hành Mở rộng 12 tháng <a href="#">Xem chi tiết</a></span>
+                        </div>
+                        <div class="block-promo-content-item">
+                            <span>2</span>
+                            <span>Giảm 40% gói Samsung Care+ 6 tháng <a href="#">Xem chi tiết</a></span>
+                        </div>
+                        <div class="block-promo-content-item">
+                            <span>3</span>
+                            <span>Nhập mã SPPMWG giảm 10% tối đa 100.000đ khi thanh toán qua Ví ShopeePay <a
+                                    href="#">Xem chi tiết</a></span>
+                        </div>
+                        <div class="block-promo-content-item">
+                            <span>4</span>
+                            <span> Nhập mã MWG18 giảm 3% tối đa 100.000đ khi thanh toán quét QRcode qua App của ngân
+                                hàng <a href="#">Xem chi tiết</a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-right-address">
+                    <div class="detail-right-address-title">
+                        <a href=""> <i class="fa-solid fa-location-dot"></i> Chọn địa chỉ nhận hàng
+                        </a>
+                        <span> để biết thời gian giao</span>
+                    </div>
+                    <div class="detail-right-addres-title">
+                        <a href=""> <i class="fa-solid fa-store"></i> Xem siêu thị có hàng
+                        </a>
+                    </div>
+                </div>
+
+                <div class="block-button">
+                    <a href="#" class="add-to-cart block-button-buynow"> Mua ngay </a>
+
+                    <div class="block-button-buybank">
+                        <div class="block-button-buybank-item">
+                            <span>MUA TRẢ GÓP</span>
+                            <span>Duyệt hồ sơ trong 5 phút</span>
+                        </div>
+                        <div class="block-button-buybank-item">
+                            <span>TRẢ GÓP QUA THER</span>
+                            <span>Visa, Mastercarđ, JCB, Anex</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-right-hotline">
+                    <span>Gọi đặt mua</span> <a href=""> 1800.1060 </a> <span>(7:30 - 22:00)</span>
+                </div>
+
+                <div class="block-promo">
+                    <div class="block-promo-top">
+                        <h1>11 ưu đãi thêm</h1>
+                        <span>Dự kiến áp dụng đến 23:00 | 30/09</span>
+                    </div>
+                    <div class="block-promo-content">
+                        <div class="block-promo-content-item-sale">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Tai nghe Buds 2 Trắng giảm 1,490,000đ khi mua kèm M53/M33</span>
+                        </div>
+                        <div class="block-promo-content-item-sale">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Tai nghe Sony giảm đến 18% khi mua kèm Điện thoại/Đồng hồ<a href="#">Xem chi
+                                    tiết</a></span>
+                        </div>
+                        <div class="block-promo-content-item-sale">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Tai nghe giảm đến 40% khi mua kèm Điện thoại/Laptop/Tablet <a href="#">Xem chi
+                                    tiết</a></span>
+                        </div>
+                        <div class="block-promo-content-item-sale">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Tặng suất mua xe đạp giảm đến 30%(không kèm khuyến mãi khác) <a href="#">Xem chi
+                                    tiết</a></span>
+                        </div>
+                        <div class="block-promo-content-item-sale">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Tặng suất mua kèm đồng hồ Beu giảm 30% (không áp dụng khuyến mãi khác của đồng
+                                hồ)</span>
+                        </div>
+                        <div class="block-promo-content-item-sale">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Tặng suất mua Máy lọc nước giảm đến 3,000,000đ. <a href="#">Xem chi
+                                    tiết</a></span>
+                        </div>
+                        <div class="block-promo-content-item-sale">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Tặng suất mua Nồi chiên không dầu giảm đến 45% (Áp dụng 4 model)</span>
+                        </div>
+                        <div class="block-promo-content-item-sale">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Mua Đồng hồ thời trang giảm 40% cho Đồng hồ dưới 3 triệu, giảm 30% cho Đồng hồ từ
+                                3
+                                triệu trở lên <a href="#">Xem chi tiết</a></span>
+                        </div>
+                        <div class="block-promo-content-item-sale">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Mua kèm K+ App: giảm giá 10% + Nhân đôi hạn sử dụng<a href="#">Xem chi
+                                    tiết</a></span>
+                        </div>
+                        <div class="block-promo-content-item-sale">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Tặng suất mua Bếp điện từ giảm đến 6 triệu.<a href="#">Xem chi tiết</a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-right-config">
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="list-footer">
+                <div class="list-footer-items">
+                    <div class="list-footer-item">
+                        <li> <a href=""><span>Tích điểm Quà tặng Vip</span></a></li>
+                        <li> <a href=""><span>Lịch sử mua hàng</span></a></li>
+                        <li> <a href=""><span>Tìm hiểu về mua trả góp</span></a></li>
+                        <li> <a href=""><span>Chính sách bảo hành</span></a></li>
+                        <li> <a href=""><span>Xem thêm</span> <i class="fa-solid fa-sort-down"></i></a></li>
+                    </div>
+                    <div class="list-footer-item">
+                        <li> <a href=""><span>Giới thiệu công ty (MWG.vn)</span></a></li>
+                        <li> <a href=""><span>Tuyển dụng</span></a></li>
+                        <li> <a href=""><span>Gửi đóng góp, khiếu nại</span></a></li>
+                        <li> <a href=""><span>Tìm siêu thị (3.304 shop)</span></a></li>
+                        <li> <a href=""><span>Xem bản Mobile</span> </a></li>
+                    </div>
+                    <div class="list-footer-item">
+                        <li> <a href=""><span class="hotline-footer">Tổng tài trợ (Miễn phí gọi) </span></a></li>
+                        <li> <a href="tel:0944117231"><span class="hotline-footer">Gọi mua: <p> 1800.1060</p> (7:30 - 22:00)</span></a></li>
+                        <li> <a href=""><span class="hotline-footer">Kỹ thuật: <p> 1800.1763</p> (7:30 - 22:00)</span></a></li>
+                        <li> <a href=""><span class="hotline-footer">Khiếu nại: <p> 1800.1062</p> (8:00 - 21:30)</span></a></li>
+                        <li> <a href=""><span class="hotline-footer">Bảo hành: <p> 1800.1064</p> (8:00 - 21:00)</span></a></li>
+                    </div>
+                    <div class="list-footer-item">
+                        <div class="list-footer-item-logo">
+                            <li><img src="../image/logo1.png" alt=""><span>3772.3k Fan</span></li>
+                            <li><img src="../image/logo2.png" alt=""><span>850k Đăng ký</span></li>
+                            <li><img src="../image/logo3.png" alt=""><span>Zalo TGDD</span></li>
+                        </div>
+                        <div class="list-footer-item-logos">
+                            <span>Website cùng tập đoàn</span>
+                            <ul>
+                                <li style="background-position:0 -58px;"></li>
+                                <li style="background-position:-84px 0;"></li>
+                                <li style="background-position:-170px 0;"></li>
+                                <li style="background-position:-85px -90px;"></li>
+                                <li style="background-position:-85px -120px;"></li>
+                                <li style="background-position:0 -29px;"></li>
+                                <li style="background-position:-170px -90px;"></li>
+                                <li style="background-position:0 -90px;"></li>
+                                <li style="background-position:0 -120px;"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-footer-text">
+            <div class="footer-text">
+                <span>© 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày
+                    02/01/2007.
+                    GPMXH: 238/GP-BTTTT do Bộ Thông Tin và Truyền Thông cấp ngày 04/06/2020.
+                    Địa chỉ: 128 Trần Quang Khải, P. Tân Định, Q.1, TP.Hồ Chí Minh. Điện thoại: 028 38125960. Email:
+                    cskh@thegioididong.com. Chịu trách nhiệm nội dung: Huỳnh Văn Tốt. Xem chính sách sử dụng</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="scriptdetail.js"></script>
+</body>
+
+</html>

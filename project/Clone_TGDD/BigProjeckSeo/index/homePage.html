@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3426ec3618.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="order.css">
+
+    <title>Thế giới di động</title>
+
+</head>
+
+<body style="background-color: #f3f3f3">
+
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="false">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="show-cart table"></table>
+                    <div>Tổng giá: <span class="total-cart"></span>đ</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <button type="button" class="btn btn-primary"><a href="order.html">Mua ngay</a></button>
+                </div>
+                <button class="clear-cart btn btn-danger">Xoá tất cả sản phẩm</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <img src="https://cdn.tgdd.vn/2022/12/banner/1200x44-1200x44.jpg" alt="">
+    </header>
+    <nav>
+        <div class="container header_ct">
+            <ul>
+                <li> <a href="#"> <img style="width: 150px"
+                            src="https://cdn.haitrieu.com/wp-content/uploads/2021/11/Logo-The-Gioi-Di-Dong-MWG-B-H.png"
+                            alt=""></a>
+                </li>
+                <li id="address-form"><a href="#"> Hà Nội <i class="fa-solid fa-angle-down"></i></a></li>
+                <li><input type="text" placeholder="Bạn tìm gì....."> <i class="fa-solid fa-magnifying-glass"></i></li>
+                <li><a href=""></a><button data-toggle="modal" data-target="#cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Giỏ hàng <span class="total-count"></span>
+                    </button></li>
+                <li><a href="">Lịch sử <br> đơn hàng</a></li>
+                <li><a href="../article/article.html">24h Công nghệ </a></li>
+                <li><a href="../../login/login.html">Đăng nhập / Đăng ký</a></li>
+                <li><a href="">Game app </a></li>
+                <div class="address-form">
+                    <div class="address-form-content">
+                        <h2>Chọn địa chỉ nhận hàng <span id="ad-close">X Đóng</span></h2>
+                        <form action="">
+                            <p>Chọn đầy đủ địa chỉ nhận hàng để biết chính xác thời gian giao hàng</p>
+                            <select name="calc_shipping_provinces" required="">
+                                <option value="">Tỉnh / Thành phố</option>
+                            </select>
+                            <select name="calc_shipping_district" required="">
+                                <option value="">Quận / Huyện</option>
+                            </select>
+                            <input class="billing_address_1" name="" type="hidden" value="">
+                            <input class="billing_address_2" name="" type="hidden" value="">
+                            <input type="number" placeholder="Nhập số điện thoại">
+                            <input type="text" placeholder="Số nhà, Tên đường">
+                            <button>Xác nhận</button>
+                        </form>
+                    </div>
+                </div>
+            </ul>
+
+        </div>
+    </nav>
+
+    <section class="menu-bar">
+        <div class="container">
+            <div class="menu-bar-container">
+                <ul>
+                    <li><a href=""><i class="fa-light fa-phone"></i> Điện thoại</a></li>
+                    <li> <a href=""><i class="fa-light fa-laptop"></i> Laptop</a></li>
+                    <li><a href=""><i class="fa-regular fa-tablet"></i> Tablet</a></li>
+                    <li><a href=""><i class="fa-light fa-headphones"></i>Phụ kiện <i
+                                class="fa-solid fa-angle-down"></i></a>
+                        <div class="submenu">
+                            <ul>
+                                <p>PHỤ KIỆN DI ĐỘNG</p>
+                                <li> <a href=""> Sạc dự phòng </a></li>
+                                <li> <a href=""> Sạc, cáp </a></li>
+                                <li> <a href=""> Ốp lưng điện thoại </a></li>
+                                <li> <a href=""> Ốp lưng máy tính bảng </a></li>
+                                <li> <a href=""> Miếng dán màn hình </a></li>
+                                <li> <a href=""> Gậy chụp ảnhm, Gimbal </a></li>
+                                <li> <a href=""> Giá đỡ điện thoại </a></li>
+                                <li> <a href=""> Đế, móc điện thoại </a></li>
+                                <li> <a href=""> Túi chống nước </a></li>
+                                <li> <a href=""> Túi đựng AirPods </a></li>
+                                <li> <a href=""> Airtag </a></li>
+                                <li> <a href=""> Phụ kiện Tablet </a></li>
+                            </ul>
+                            <div class="flexsubmenu">
+                                <ul>
+                                    <p>PHỤ KIỆN LAPTOP</p>
+                                    <li> <a href=""> Chuột, bàn phím </a></li>
+                                    <li> <a href=""> Balo, túi chống </a></li>
+                                    <li> <a href=""> Giá đỡ laptop </a></li>
+                                    <li> <a href=""> Phầm mềm </a></li>
+                                </ul>
+                                <ul>
+                                    <p>THIẾT BỊ ÂM THANH</p>
+                                    <li> <a href=""> Tai nghe </a></li>
+                                    <li> <a href=""> Loa</a></li>
+                                    <li> <a href=""> Micro thu âm điện thoại </a></li>
+                                </ul>
+                            </div>
+                            <div class="flexsubmenu">
+                                <ul>
+                                    <p>THIẾT BỊ NHÀ THÔNG MINH</p>
+                                    <li> <a href=""> Khoá điện tử</a></li>
+                                    <li> <a href=""> Camera, webcam</a></li>
+                                    <li> <a href=""> Máy chiếu </a></li>
+                                    <li> <a href=""> TV Box</a></li>
+                                    <li> <a href=""> Ổ cắm, bóng đèn thông minh </a></li>
+                                </ul>
+                                <ul>
+                                    <p>THIẾT BỊ LƯU TRỮ</p>
+                                    <li> <a href="">Ổ cứng di động</a></li>
+                                    <li> <a href=""> Thẻ nhớ</a></li>
+                                    <li> <a href=""> USB </a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </li>
+                    <li><a href=""> <i class="fa-light fa-clock"></i> Đồng hồ</a></li>
+                    <li><a href=""><i class="fa-light fa-computer"></i>PC, Máy in <i
+                                class="fa-solid fa-angle-down"></i></a>
+
+                        <div class="submenu submenubonus">
+                            <ul>
+                                <li> <a href="">Máy in</a></li>
+                                <li> <a href="">Mực in</a></li>
+                                <li> <a href="">Màn hình máy tính</a></li>
+                                <li> <a href="">Máy tính để bàn</a></li>
+                            </ul>
+                        </div>
+
+
+
+                    </li>
+                    <li><a href="">Máy cũ giá rẻ</a></li>
+                    <li><a href="">Sim, thẻ cào</a></li>
+                    <li><a href="">Dịch vụ tiện ích</a></li>
+                </ul>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <div class="bigbanner">
+        <a href=""> <img class="bigbannerimg" src="https://cdn.tgdd.vn/2022/09/banner/45465456-1920x450.png" alt=""
+                srcset="">
+        </a>
+    </div>
+
+    <!-- =============== slide ====================================================== -->
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides">
+            <img src="https://cdn.tgdd.vn/2022/12/banner/ip14pro-720-220-720x220-2.png">
+            <img src="https://cdn.tgdd.vn/2022/12/banner/week-720-220-720x220.png">
+        </div>
+        <div class="mySlides">
+            <img src="https://cdn.tgdd.vn/2022/12/banner/reno8-720-220-720x220-8.webp">
+            <img src="https://cdn.tgdd.vn/2022/12/banner/720-220-720x220-68.png">
+        </div>
+        <div class="mySlides">
+            <img src="https://cdn.tgdd.vn/2022/12/banner/720-22005-720x220-1.gif">
+            <img src="https://cdn.tgdd.vn/2022/12/banner/720-220-720x220-81.webp">
+        </div>
+    </div>
+    <br>
+
+    <!-- ------------------------ slider-product  ----------------------------- -->
+
+
+    <div class="container">
+        <div class="slider-product-one-content">
+            <div class="slider-product-one-content-title">
+                <h2><img src="https://cdn.tgdd.vn/2022/10/banner/Deal-ngon-1200x120.png"
+                        style="margin-left: -12px; margin-top: -14px;" alt=""></h2>
+            </div>
+            <div class="slider-product-one-content-conainer">
+                <div class="slider-product-one-content-items-content">
+
+                    <div class="slider-product-one-content-items">
+                        <div class="slider-product-one-content-item">
+                            <img src="https://cdn.tgdd.vn/Products/Images/42/290878/Realme-c30s-den-temp-600x600.jpg"
+                                alt="">
+                            <div class="slider-product-one-content-item-text">
+                                <li> <img src="https://cdn.tgdd.vn/2022/12/content/icon-50x50-9.png" alt="">
+                                    <p>Tuần lễ Realme</p>
+                                </li>
+                                <li>Realme C30s (4GB/64GB</li>
+                                <li>Online giá rẻ</li>
+                                <li><a href="">3.190.000</a><sup>đ</sup></li>
+                                <li>2.890.000<sup>đ</sup> <a href="">-17%</a></li>
+                                <li>Quà 400.000<sup>đ</sup></li>
+                                <li>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="slider-product-one-content-item">
+                            <img src="https://cdn.tgdd.vn/Products/Images/42/261888/realme-c35-thumb-new-600x600.jpg"
+                                alt="">
+                            <div class="slider-product-one-content-item-text">
+                                <li> <img src="https://cdn.tgdd.vn/2022/12/content/icon-50x50-9.png" alt="">
+                                    <p>Tuần lễ Realme</p>
+                                </li>
+                                <li>Realme C35 64GB </li>
+                                <li>Online giá rẻ</li>
+                                <li><a href="">4.290.000</a><sup>đ</sup></li>
+                                <li>3.990.000<sup>đ</sup> <a href="">-9%</a></li>
+                                <li>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="slider-product-one-content-item">
+                            <img src="https://cdn.tgdd.vn/Products/Images/42/253401/realme-c21-y-black-600x600.jpg"
+                                alt="">
+                            <div class="slider-product-one-content-item-text">
+                                <li> <img src="https://cdn.tgdd.vn/2022/12/content/icon-50x50-9.png" alt="">
+                                    <p>Tuần lễ Realme</p>
+                                </li>
+                                <li>Realme C21-Y 3GB </li>
+                                <li>Online giá rẻ</li>
+                                <li><a href="">3.690.000</a><sup>đ</sup></li>
+                                <li>2.590.000<sup>đ</sup> <a href="">-29%</a></li>
+                                <li>Quà 400.000<sup>đ</sup></li>
+                                <li>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="slider-product-one-content-item">
+                            <img src="https://cdn.tgdd.vn/Products/Images/42/261957/realme-c11-2021-2gb-32gb-xanh-600x600.jpg"
+                                alt="">
+                            <div class="slider-product-one-content-item-text">
+                                <li> <img src="https://cdn.tgdd.vn/2022/12/content/icon-50x50-9.png" alt="">
+                                    <p>Tuần lễ Realme</p>
+                                </li>
+                                <li>Realme C11 (2021) 2GB/32GB</li>
+                                <li></li>
+                                <li><a href="">2.990.000</a><sup>đ</sup></li>
+                                <li>3.990.000<sup>đ</sup> <a href="">-27%</a></li>
+                                <!-- <li>Quà 400.000<sup>đ</sup></li> -->
+                                <li>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="slider-product-one-content-item">
+                            <img src="https://cdn.tgdd.vn/Products/Images/42/265313/realme-c25y-64gb-xanh-thumb-600x600.jpeg"
+                                alt="">
+                            <div class="slider-product-one-content-item-text">
+                                <li> <img src="https://cdn.tgdd.vn/2022/12/content/icon-50x50-9.png" alt="">
+                                    <p>Tuần lễ Realme</p>
+                                </li>
+                                <li>Realme C25Y 64GB </li>
+                                <li>Online giá rẻ</li>
+                                <li><a href="">4.490.000</a><sup>đ</sup></li>
+                                <li>3.690.000<sup>đ</sup> <a href="">-21%</a></li>
+                                <li></li>
+                                <li>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-product-one-content-items">
+                        <div class="slider-product-one-content-item">
+                            <img src="https://cdn.tgdd.vn/Products/Images/42/233135/realme-8-silver-600x600.jpg" alt="">
+                            <div class="slider-product-one-content-item-text">
+                                <li> <img src="https://cdn.tgdd.vn/2022/12/content/icon-50x50-9.png" alt="">
+                                    <p>Tuần lễ Realme</p>
+                                </li>
+                                <li>Realme 8 </li>
+                                <li>Online giá rẻ</li>
+                                <li><a href="">7.290.000</a><sup>đ</sup></li>
+                                <li>6.290.000<sup>đ</sup> <a href="">-13%</a></li>
+                                <!-- <li>Quà 400.000<sup>đ</sup></li> -->
+                                <li>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="slider-product-one-content-item">
+                            <img src="https://cdn.tgdd.vn/Products/Images/42/275732/realme-9i-den-thumb-600x600.jpg"
+                                alt="">
+                            <div class="slider-product-one-content-item-text">
+                                <li> <img src="https://cdn.tgdd.vn/2022/12/content/icon-50x50-9.png" alt="">
+                                    <p>Tuần lễ Realme</p>
+                                </li>
+                                <li>Realme 9i (4GB/64GB)</li>
+                                <li>Online giá rẻ</li>
+                                <li><a href="">5.490.000</a><sup>đ</sup></li>
+                                <li>4.390.000<sup>đ</sup> <a href="">-20%</a></li>
+                                <!-- <li>Quà 400.000<sup>đ</sup></li> -->
+                                <li>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="slider-product-one-content-item">
+                            <img src="https://cdn.tgdd.vn/Products/Images/42/275632/realme-9-4g-vang-thumb-1-600x600.jpg"
+                                alt="">
+                            <div class="slider-product-one-content-item-text">
+                                <li> <img src="https://cdn.tgdd.vn/2022/12/content/icon-50x50-9.png" alt="">
+                                    <p>Tuần lễ Realme</p>
+                                </li>
+                                <li>Realme 9 4G </li>
+                                <li></li>
+                                <li><a href="">7.490.000</a><sup>đ</sup></li>
+                                <li>6.390.000<sup>đ</sup> <a href="">-21%</a></li>
+                                <!-- <li>Quà 400.000<sup>đ</sup></li> -->
+                                <li>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="slider-product-one-content-item">
+                            <img src="https://cdn.tgdd.vn/Products/Images/42/290877/Realme-c30s-xanh-temp-600x600.jpg"
+                                alt="">
+                            <div class="slider-product-one-content-item-text">
+                                <li> <img src="https://cdn.tgdd.vn/2022/12/content/icon-50x50-9.png" alt="">
+                                    <p>Tuần lễ Realme</p>
+                                </li>
+                                <li>Realme C30s (2GB/32GB) </li>
+                                <li>Online giá rẻ</li>
+                                <li><a href="">2.490.000</a><sup>đ</sup></li>
+                                <li>2.290.000<sup>đ</sup> <a href="">-7%</a></li>
+                                <li>Quà 400.000<sup>đ</sup></li>
+                                <li>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="slider-product-one-content-item">
+                            <img src="https://cdn.tgdd.vn/Products/Images/42/278343/realme-c35-black-thumb-600x600.jpg"
+                                alt="">
+                            <div class="slider-product-one-content-item-text">
+                                <li> <img src="https://cdn.tgdd.vn/2022/12/content/icon-50x50-9.png" alt="">
+                                    <p>Tuần lễ Realme</p>
+                                </li>
+                                <li>Realme C35 128GB </li>
+                                <li></li>
+                                <li><a href="">4.990.000</a><sup>đ</sup></li>
+                                <li>4.390.000<sup>đ</sup> <a href="">-17%</a></li>
+                                <!-- <li>Quà 400.000<sup>đ</sup></li> -->
+                                <li>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="slider-product-one-content-btn">
+                    <i class="fas fa-chevron-left fa-chevron-left-two"></i>
+                    <i class="fas fa-chevron-right fa-chevron-right-two"></i>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="detail-list-product">
+            <a href="#">Xem tất cả sản phẩm</a>
+        </div>
+
+
+        <div class="trend-product-content">
+            <div class="trend-product-content-title">
+                <h2>Săn Sale Online Mỗi Ngày</h2>
+            </div>
+            <div class="trend-product-content-items">
+                <div class="trend-product-content-item">
+                    <li>
+                        <a href="">
+                            <img src="https://cdn.tgdd.vn/2022/08/banner/Frame-4919-280x235.png" alt="">
+                            <span>Điện thoại</span>
+                            <strong><a href=""></a>Galaxy Z Fold4 | Z Flip4</strong>
+                        </a>
+                    </li>
+                </div>
+                <div class="trend-product-content-item">
+                    <li> <a href=""><img src="https://cdn.tgdd.vn/2022/12/banner/xu-huong-gaming-desk-280x235.png"
+                                alt="">
+                            <span>Laptop Gaming</span>
+                            <strong><a href=""></a>Đồng giảm 12%<sup></sup></strong> </a>
+                    </li>
+                </div>
+                <div class="trend-product-content-item">
+                    <li> <a href=""><img src="https://cdn.tgdd.vn/2022/11/banner/Frame-47574--3--280x235.png" alt="">
+                            <span>Máy chiếu</span>
+                            <strong><a href=""></a>WorldCup giảm đến 10%</strong> </a>
+                    </li>
+                </div>
+                <div class="trend-product-content-item">
+                    <li> <a href="">
+                            <img src="https://cdn.tgdd.vn/2022/12/banner/Frame-47573-280x235-1.png" alt="">
+                            <span>Apple Watch</span>
+                            <strong><a href=""></a>Giảm sốc đến 3 TRIỆU</strong> </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <section class="list-category">
+            <div class="list-category-title">
+                DANH MỤC NỔI BẬT
+            </div>
+            <div class="list-category-items">
+                <div class="list-category-item">
+                    <li><img src="../image/list_category/anh1.png" alt="">Điện thoại</li>
+                    <li><img src="../image/list_category/anh2.png" alt="">Laptop</li>
+                    <li><img src="../image/list_category/anh3.png" alt="">Tablet</li>
+                    <li><img src="../image/list_category/anh4.png" alt="">Đồng hồ thông minh</li>
+                    <li><img src="../image/list_category/anh5.png" alt="">Đồng hồ thời trang</li>
+                    <li><img src="../image/list_category/anh6.png" alt="">Thiết bị mạng</li>
+                    <li><img src="../image/list_category/anh7.png" alt="">Ốp lưng</li>
+                    <li><img src="../image/list_category/anh8.png" alt="">Chuột máy tính</li>
+                    <li><img src="../image/list_category/anh9.png" alt="">Bàn phím </li>
+                    <li><img src="../image/list_category/anh10.png" alt="">Sim, thẻ cào</li>
+                </div>
+
+                <div class="list-category-item">
+                    <li><img src="../image/list_category/anh11.png" alt="">Loa</li>
+                    <li><img src="../image/list_category/anh12.png" alt="">Tai nghe</li>
+                    <li><img src="../image/list_category/anh13.png" alt="">Sạc dự phòng</li>
+                    <li><img src="../image/list_category/anh14.png" alt="">Cáp sạc</li>
+                    <li><img src="../image/list_category/anh15.png" alt="">Máy tính bộ</li>
+                    <li><img src="../image/list_category/anh16.png" alt="">Máy in</li>
+                    <li><img src="../image/list_category/anh17.png" alt="">Màn hình <br> máy tính</li>
+                    <li><img src="../image/list_category/anh18.png" alt="">Phụ kiện<br> gaming</li>
+                    <li><img src="../image/list_category/anh19.png" alt="">Camera, <br> webcam </li>
+                    <li><img src="../image/list_category/anh20.png" alt="">Thiết bị nhà <br> thông minh </li>
+                </div>
+            </div>
+
+
+
+
+        </section>
+        <section class="offer-today">
+            <div class="offer-today-title">
+                <h2>GỢI Ý HÔM NAY</h2>
+            </div>
+            <div class="offer-today-items">
+                <div class="offer-today-item offer-active">
+                    <li> <a href=""><img src="https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/homev2/goiy-1.png"
+                                alt=""></a> </li>
+                    <li>
+                        <h1>Cho bạn</h1>
+                    </li>
+                </div>
+                <div class="offer-today-item">
+                    <li> <a href=""><img src="https://cdn.tgdd.vn/2022/11/campaign/Desk11-50x50-1.png" alt=""></a> </li>
+                    <li>
+                        <h1>Tablet giá rẻ</h1>
+                    </li>
+                </div>
+                <div class="offer-today-item">
+                    <li> <a href=""><img src="https://cdn.tgdd.vn/2022/08/campaign/50x50-chi-giam-online-48x52-2.png"
+                                alt=""></a> </li>
+                    <li>
+                        <h1>Săn Sale Online</h1>
+                    </li>
+                </div>
+                <div class="offer-today-item">
+                    <li> <a href=""><img src="https://cdn.tgdd.vn/2022/11/campaign/icon-laptop-gaming-desk-50x50.png"
+                                alt=""></a> </li>
+                    <li>
+                        <h1>Laptop Gaming</h1>
+                    </li>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ===================================================================== -->
+
+
+
+        <div class="slider-product-one-content-items-content">
+            <div class="logic-search-sort">
+
+
+                <input class="inputx" type="text" name="search" value="" id="" placeholder="Tìm kiếm..."
+                    autocomplete="off" />
+                <select class="select-sort" onchange="sort()" name="" id="sort" style="width:200px">
+                    <option value="0">
+                        Sắp xếp theo
+                    </option>
+                    <option value="1">
+                        <p> Sắp xếp từ A - Z <i class="fas fa-sort-alpha-down"></i> </p>
+                    </option>
+                    <option value="2">
+                        Sắp xếp từ Z - A <i class="fas fa-sort-alpha-up"></i>
+                    </option>
+                </select>
+            </div>
+
+            <section class="list-product">
+
+
+
+                <div class="list-product-items">
+
+                </div>
+                <div class="paging_product">
+                    <ul id="pagination"></ul>
+                </div>
+
+            </section>
+            <div class="list-product-item-footer">
+                <span>Xem thêm</span>
+            </div>
+
+            <div class="main-24h">
+                <div class="x24h-cong-nghe">
+                    <strong>24H CÔNG NGHỆ</strong>
+                    <div class="x24h-cong-nghe-items">
+                        <div class="x24h-cong-nghe-item">
+                            <img src="https://cdn.tgdd.vn/Files/2022/04/11/1425191/anhdaidien_800x450-200x200.jpg"
+                                alt="">
+                            <p>Cách định dạng các mục trong Microsoft Word trên máy tính bằng phím tắt</p>
+                        </div>
+                        <div class="x24h-cong-nghe-item">
+                            <img src="https://cdn.tgdd.vn/Files/2022/08/22/1458529/laptopgiamgiacucmanhthang8_800x450-200x200.jpg"
+                                alt="">
+                            <p>Back to school' cùng những mẫu laptop giảm giá cực ngon chào năm học 2022 nào!</p>
+                        </div>
+                        <div class="x24h-cong-nghe-item">
+                            <img src="https://cdn.tgdd.vn/Files/2022/08/08/1454004/anhbia1_800x450-200x200.jpg" alt="">
+                            <p> Cách chuyển đổi dạng văn bản trên Windows 11 cực dễ với Image To Text Windows</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="x24h-img">
+                    <img src="https://cdn.tgdd.vn/2022/03/banner/DesktopTGDD-285x350.png" alt="">
+                </div>
+            </div>
+
+            <div class="chuyen-trang-thuong-hieu">
+                <span>CHUYÊN TRANG THƯƠNG HIỆU</span>
+                <div class="chuyen-trang-thuong-hieu-item">
+                    <img src="https://cdn.tgdd.vn/2022/08/banner/samsung-390-210-390x210.png" alt="">
+                    <img src="https://cdn.tgdd.vn/2022/07/banner/6BD1D926-AFFA-45E4-A5C6-DE9386EED1CB-390x210.png"
+                        alt="">
+                    <img src="https://cdn.tgdd.vn/2022/08/banner/lenovoLaptop-390x210-1.png" alt="">
+                </div>
+            </div>
+
+            <div class="chuyen-trang-thuong-hieu">
+                <span>CHUỖI MỚI DEAL KHỦNG</span>
+                <div class="chuyen-trang-thuong-hieu-item">
+                    <img src="https://cdn.tgdd.vn/2022/09/banner/760x400-min-760x400-1.png" alt="">
+                    <img src="https://cdn.tgdd.vn/2022/10/banner/380x200-380x200-1.png" alt="">
+                    <img src="https://cdn.tgdd.vn/2022/10/banner/380x200-380x200-2.png" alt="">
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="list-footer">
+                    <div class="list-footer-items">
+                        <div class="list-footer-item">
+                            <li> <a href=""><span>Tích điểm Quà tặng Vip</span></a></li>
+                            <li> <a href=""><span>Lịch sử mua hàng</span></a></li>
+                            <li> <a href=""><span>Tìm hiểu về mua trả góp</span></a></li>
+                            <li> <a href=""><span>Chính sách bảo hành</span></a></li>
+                            <li> <a href=""><span>Xem thêm</span> <i class="fa-solid fa-sort-down"></i></a></li>
+                        </div>
+                        <div class="list-footer-item">
+                            <li> <a href=""><span>Giới thiệu công ty (MWG.vn)</span></a></li>
+                            <li> <a href=""><span>Tuyển dụng</span></a></li>
+                            <li> <a href=""><span>Gửi đóng góp, khiếu nại</span></a></li>
+                            <li> <a href=""><span>Tìm siêu thị (3.304 shop)</span></a></li>
+                            <li> <a href=""><span>Xem bản Mobile</span> </a></li>
+                        </div>
+                        <div class="list-footer-item">
+                            <li> <a href=""><span>Tổng tài trợ (Miễn phí gọi) </span></a></li>
+                            <li> <a href=""><span>Gọi mua: 1800.1060 (7:30 - 22:00)</span></a></li>
+                            <li> <a href=""><span>Kỹ thuật: 1800.1763 (7:30 - 22:00)</span></a></li>
+                            <li> <a href=""><span>Khiếu nại: 1800.1062 (8:00 - 21:30)</span></a></li>
+                            <li> <a href=""><span>Bảo hành: 1800.1064 (8:00 - 21:00)</span></a></li>
+                        </div>
+                        <div class="list-footer-item">
+                            <div class="list-footer-item-logo">
+                                <li><img src="../image/logo1.png" alt=""><span>3772.3k Fan</span></li>
+                                <li><img src="../image/logo2.png" alt=""><span>850k Đăng ký</span></li>
+                                <li><img src="../image/logo3.png" alt=""><span>Zalo TGDD</span></li>
+                            </div>
+                            <div class="list-footer-item-logos">
+                                <span>Website cùng tập đoàn</span>
+                                <ul>
+                                    <li style="background-position:0 -58px;"></li>
+                                    <li style="background-position:-84px 0;"></li>
+                                    <li style="background-position:-170px 0;"></li>
+                                    <li style="background-position:-85px -90px;"></li>
+                                    <li style="background-position:-85px -120px;"></li>
+                                    <li style="background-position:0 -29px;"></li>
+                                    <li style="background-position:-170px -90px;"></li>
+                                    <li style="background-position:0 -90px;"></li>
+                                    <li style="background-position:0 -120px;"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="google-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1862.9831830113978!2d105.8090909!3d20.9538658!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ad19e058a311%3A0x65317cec69c5238d!2zVHLGsOG7nW5nIFRIUFQgTmfDtCBUaMOsIE5o4bqtbQ!5e0!3m2!1svi!2s!4v1671020706638!5m2!1svi!2s"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="footer-text">
+                <span>© 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày
+                    02/01/2007.
+                    GPMXH: 238/GP-BTTTT do Bộ Thông Tin và Truyền Thông cấp ngày 04/06/2020.
+                    Địa chỉ: 128 Trần Quang Khải, P. Tân Định, Q.1, TP.Hồ Chí Minh. Điện thoại: 028 38125960. Email:
+                    cskh@thegioididong.com. Chịu trách nhiệm nội dung: Huỳnh Văn Tốt. Xem chính sách sử dụng</span>
+            </div>
+        </div>
+
+        <!-- <div id="thp"></div> -->
+
+
+        <!-- Messenger Plugin chat Code -->
+        <div id="fb-root"></div>
+
+        <!-- Your Plugin chat code -->
+        <div id="fb-customer-chat" class="fb-customerchat">
+        </div>
+
+        <script>
+            var chatbox = document.getElementById('fb-customer-chat');
+            chatbox.setAttribute("page_id", "110118384982413");
+            chatbox.setAttribute("attribution", "biz_inbox");
+        </script>
+
+        <!-- Your SDK code -->
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    xfbml: true,
+                    version: 'v15.0'
+                });
+            };
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <img src="" alt="">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
+        <script src="https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js"></script>
+        <script src="script.js"></script>
+</body>
+
+</html>
