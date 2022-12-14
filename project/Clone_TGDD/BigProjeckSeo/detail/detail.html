@@ -142,7 +142,7 @@
                 <li><a href="../article/article.html">24h Công nghệ </a></li>
                 <li><a href="../../login/login.html">Đăng nhập / Đăng ký </a></li>
                 <li><a href="">Game app </a></li>
-            
+
                 <li class="button-menu-bars"><i class="iconnewglobal-menu"></i>
                 </li>
                 <div class="address-form">
@@ -718,10 +718,14 @@
                     </div>
                     <div class="list-footer-item">
                         <li> <a href=""><span class="hotline-footer">Tổng tài trợ (Miễn phí gọi) </span></a></li>
-                        <li> <a href="tel:0944117231"><span class="hotline-footer">Gọi mua: <p> 1800.1060</p> (7:30 - 22:00)</span></a></li>
-                        <li> <a href=""><span class="hotline-footer">Kỹ thuật: <p> 1800.1763</p> (7:30 - 22:00)</span></a></li>
-                        <li> <a href=""><span class="hotline-footer">Khiếu nại: <p> 1800.1062</p> (8:00 - 21:30)</span></a></li>
-                        <li> <a href=""><span class="hotline-footer">Bảo hành: <p> 1800.1064</p> (8:00 - 21:00)</span></a></li>
+                        <li> <a href="tel:0944117231"><span class="hotline-footer">Gọi mua: <p> 1800.1060</p> (7:30 -
+                                    22:00)</span></a></li>
+                        <li> <a href=""><span class="hotline-footer">Kỹ thuật: <p> 1800.1763</p> (7:30 -
+                                    22:00)</span></a></li>
+                        <li> <a href=""><span class="hotline-footer">Khiếu nại: <p> 1800.1062</p> (8:00 -
+                                    21:30)</span></a></li>
+                        <li> <a href=""><span class="hotline-footer">Bảo hành: <p> 1800.1064</p> (8:00 -
+                                    21:00)</span></a></li>
                     </div>
                     <div class="list-footer-item">
                         <div class="list-footer-item-logo">
@@ -759,6 +763,36 @@
 
     </div>
 
+
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "110118384982413");
+        chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v15.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
     <script src="https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js"></script>
