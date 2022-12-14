@@ -1,0 +1,58 @@
+body h1 h2 {
+  /* background-color: black; */
+  margin: 0;
+  padding: 0;
+  font: 14px/18px Arial, Helvetica, sans-serif;
+}
+
+.content-article {
+  line-height: 1.5;
+  margin-bottom: 10px;
+  font-size: 16px !important;
+}
+.article__content {
+  display: block;
+  overflow: hidden;
+  width: 800px;
+  margin: auto;
+}
+
+
+
+.imgwrap img {
+  width: 800px;
+  height: auto;
+}
+.title {
+    display: block;
+    overflow: hidden;
+    line-height: 45px;
+    font-size: 35px;
+    color: #333;
+    font-family: 'Roboto Condensed',sans-serif;
+    font-weight: 600;
+    width: 800px;
+    padding: 10px 0px;
+    margin: auto;
+}
+.image-description{
+    width: 800px;
+    height: auto;
+    padding: 10px 0px;
+}
+
+.text-description{
+  color: hsl(0 0% 20%);
+  font-family: "Helvetica";
+  line-height: 30px;
+  margin: 20px 0px
+}
+
+input:focus{
+  border: none;
+  outline: none;
+}
+
+textarea:focus{
+  outline: none;
+}

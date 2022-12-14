@@ -1,0 +1,282 @@
+.main-cart {
+
+}
+.container-cart {
+    display: block;
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+    margin: 12px auto;
+    min-width: 0;
+    background: #fff;
+    box-shadow: 0 0 18px rgb(0 0 0 / 12%);
+    border-radius: 2px;
+}
+.list-cart {
+    display: flex;
+    flex-flow: column wrap;
+}
+.list-cart .imgsp a img {
+    width: 75px;
+    margin: auto;
+}
+.product-item {
+    display: block;
+    padding: 10px 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.product-item .product-price span{
+    float: right;
+    color: #f3f3f3;
+    font-size: 16px;
+    text-align: right;
+    margin-bottom: 2px;
+    font-weight: 700;
+
+}
+.name-container {
+
+}
+.product-item .name-container a {
+    float: left;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    width: 50%;
+}
+.list-cart .imgsp {
+    float: left;
+    width: 16%;
+}
+.list-cart .imgsp button {
+    display: block;
+    overflow: hidden;
+    margin: 15px auto 0;
+    border: 0;
+    background: #fff;
+    color: #999;
+    font-size: 12px;
+    cursor: pointer;
+}
+.list-cart .imgsp button span {
+    float: left;
+    background: #ccc;
+    border-radius: 30%;
+    width: 40px;
+    height: 20px;
+    position: relative;
+    margin: 2px 3px 0 0;
+}
+.choosenumber {
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    border-radius: 5px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+    margin-top: 26px;
+    margin-left: 460px;
+
+}
+.choosenumber .minus {
+    float: left;
+    border-right: 1px solid #dfdfdf;
+    background: #fff;
+    width: 32%;
+    height: 30px;
+    position: relative;
+    /* pointer-events: none; */
+    cursor: pointer;
+}
+.choosenumber .minus i {
+    width: 12px;
+    height: 2px;
+    background: #ccc;
+    display: block;
+    margin: 14px auto;
+}
+.choosenumber .number {
+    width: 30px;
+    text-align: center;
+
+}
+.choosenumber .plus {
+    float: right;
+    border-left: 1px solid #dfdfdf;
+    background: #fff;
+    width: 32%;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+}
+.choosenumber .plus i:first-child {
+    width: 12px;
+    height: 2px;
+    background: #288ad6;
+    display: block;
+    margin: 14px auto; 
+}
+.choosenumber .plus i:nth-child(2) {
+    width: 2px;
+    height: 12px;
+    background: #288ad6;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    right: 0;
+}
+.total-provisional {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 22px;
+}
+.info-customer {
+    display: block;
+    overflow: hidden;
+    border-top: 1px solid #d1d1d1;
+    padding: 30px;
+
+}
+.info-customer h4 {
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #333;
+}
+.infor-customer .form-customer {
+    display: block;
+}
+.form-customer .sex-customer {
+    display: block;
+    overflow: hidden;
+}
+.form-customer .sex-customer input {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #333;
+    margin-right: 4px;
+    margin-left: 6px;
+    cursor: pointer;
+}
+.form-customer .fillinform {
+    display: block;
+    overflow: hidden;
+    padding: 12px 0 10px;
+}
+.form-customer .fullname,
+.form-customer .phonenumber {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333;
+    box-sizing: border-box;
+    width: 260px;
+}
+.fillname p {
+    margin-bottom: 0;
+}
+.fillname {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.choosegetgoods {
+    border-top: 1px solid #d1d1d1;
+    display: block;
+    padding: 30px;
+}
+.choosegetgoods h4 {
+    display: block;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding-bottom: 10px;
+
+}
+.choosegetgoods .click-choose {
+    display: block;
+    
+}
+.choosegetgoods .click-choose .choose-link {
+    background: none;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 20px 10px 0;
+    position: relative;
+    cursor: pointer;
+    margin-right: 2px;
+    margin-left: 6px;
+}
+
+.chose{
+    display: flex;
+    width: 46%;
+    justify-content: space-between;
+    background-color: white;
+    margin: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+.choose-content {
+    background-color: antiquewhite;
+    padding: 10px;
+    padding-bottom: 16px;
+
+}
+p{
+    margin: 0;
+}
+.select-address{
+    display: flex;
+    flex-wrap: wrap;
+}
+.anotheroption{
+    display: block;
+    border-top: 1px solid #d1d1d1;
+    padding: 30px 30px;
+}
+.anotheroption p {
+    padding-bottom: 10px;
+}
+.anotheroption .customer-note {
+    width: 100%;
+    border-radius: 4px;
+    padding: 6px;
+    border: 1px solid #d1d1d1;
+}
+
+.totalprice {
+    display: block;
+    border-top: 1px solid #d1d1d1;
+    padding: 20px 30px;
+}
+.totalprice .total-price {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+.totalprice .submitorder {
+    display: block;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    margin: 10px auto;
+    width: 100%;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    background: linear-gradient(180deg,#f79429,#f7712e);
+}
