@@ -73,3 +73,14 @@ fetch(newsApi)
     showContentRight(articleLeftContent, data);
     articleLeftHeader.innerHTML = showHeaderRight(data);
   });
+const ButtonMenu = document.querySelector(".button-menu-bars");
+const menubars = document.querySelector(".menu-bars-reponsive");
+const closeMenuBar = document.querySelector(".button-close-menu-bars");
+console.log(ButtonMenu);
+
+ButtonMenu.onclick = function () {
+  menubars.classList.toggle("open-menu-bars-responsive");
+};
+closeMenuBar.onclick = function () {
+  menubars.classList.toggle("open-menu-bars-responsive");
+};

@@ -3,6 +3,7 @@
     /* background-color: red; */
     width: 100%;
     max-width: 100%;
+    overflow-x: hidden;
   }
   .test-width {
     background-color: green;
@@ -85,8 +86,9 @@
   }
 
   .menu-bars-reponsive {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
+    display: none;
     /* display:none */
   }
   .open-menu-bars-responsive {
@@ -94,6 +96,7 @@
     transition: all 0.5s ease-in;
     display: block;
     opacity: 1;
+    z-index: 9999;
   }
   .button-close-menu-bars {
     display: flex;
@@ -215,6 +218,7 @@
     justify-content: center;
     width: 100%;
     flex-direction: column;
+    align-items: center;
   }
   .wapper-api {
     display: flex;
@@ -238,8 +242,12 @@
   }
   .detail-left-sale-items {
     margin-top: 1590px;
+    width: 97%;
   }
-
+  .detail-left-write-comment,
+  .detail-left-show-comment {
+  width: 97%;
+  }
   .detail-left-sale-items a {
     font-size: 16px;
   }
@@ -308,4 +316,9 @@
   .list-footer-item-logos ul li + li {
     margin-left: 5px;
   }
+
+  .detail-right-access {
+    width: 97%;
+  }
+
 }

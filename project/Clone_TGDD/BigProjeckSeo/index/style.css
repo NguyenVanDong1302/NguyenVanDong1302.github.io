@@ -12,15 +12,8 @@ a:hover {
   text-decoration: none;
   list-style: none;
 }
-
-@media (max-width: 46em) {
-  header {
-    display: none;
-  }
-
-  .header-ct {
-    display: none;
-  }
+body{
+  overflow-x: hidden;
 }
 
 header {
@@ -1103,4 +1096,11 @@ i {
 }
 .google-map{
   width: 100%;
+}
+.hotline-footer {
+  display: flex;
+}
+.hotline-footer > p {
+  color: #4a90e2;
+  padding: 0px 03px;
 }

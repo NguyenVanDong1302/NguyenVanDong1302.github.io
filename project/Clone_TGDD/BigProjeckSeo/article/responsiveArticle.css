@@ -1,0 +1,48 @@
+@media (max-width: 1000px) {
+  .article-right {
+    display: none;
+  }
+  .home-menu ul li {
+    font-size: 10px;
+  }
+  .main-article {
+    justify-content: flex-start;
+    padding: 0px 10px;
+  }
+  .article-left,
+  .article-left-header,
+  .article-left-content {
+    width: 100%;
+  }
+  .article-left-header-left img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 5px;
+  }
+  .alhl-title {
+    height: auto;
+    padding-top: 5px;
+  }
+  .container{
+    height: auto;
+  }
+  nav{
+    padding: 0px 10px;
+    padding-top: 10px;
+  }
+  .menu-bar{
+    height: auto;
+    padding: 0px 10px;
+  }
+  .menu-bar-container > ul > li{
+    padding: 0;
+    width: 100%;
+  }
+  .contents{
+    padding: 0px 10px ;
+  }
+  .menu-bar-container{
+    padding: 10px 0px;
+    height: auto;
+  }
+}

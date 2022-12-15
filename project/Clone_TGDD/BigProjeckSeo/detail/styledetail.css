@@ -4,6 +4,7 @@
 
 body {
   background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
 }
 
 .main-content {
@@ -632,7 +633,7 @@ a {
 
 .detail-left-sale-items a {
   color: #2899E2;
-  font-size: 20px;
+  font-size: 16px;
 
 }
 
@@ -673,7 +674,7 @@ sup {
   border-bottom: 11px solid transparent;
   position: absolute;
   left: -10px;
-  top: 0;
+  top: -2px;
 }
 
 
@@ -993,7 +994,7 @@ sup {
   display: flex;
   justify-content: center;
   border: 1px solid #2899E2;
-  padding: 11px 90px;
+  padding: 5px 40px;
   margin-top: 20px;
   border-radius: 5px;
   align-items: center;
@@ -1380,3 +1381,12 @@ sup {
   width: 100px;
   height: auto;
 }
+
+/* .hotline-footer {
+  display: flex;
+  font-weight: bold;
+}
+.hotline-footer > p {
+  color: #4a90e2;
+  padding: 0px 03px;
+} */

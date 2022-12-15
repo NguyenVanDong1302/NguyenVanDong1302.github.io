@@ -570,7 +570,49 @@ select {
 }
 
 /* ------------ trend product ------------- */
+.menu-bars-reponsive {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateX(100%);
+  position: absolute;
+  transition: all 0.5s ease-in;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: none;
+}
 
+.list-footer-item-logos {
+  padding-top: 10px;
+  /* margin-top: 20px; */
+}
+.list-footer-item-logos ul {
+  display: grid;
+  grid-gap: 5px;
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.list-footer-item-logos li {
+  background-image: url(//cdn.tgdd.vn/mwgcart/mwg-site/ContentMwg/images/DMX/Global/Desktop/Logo-webmoi.png?v=4);
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 24px;
+  width: 80px;
+  line-height: 30px;
+  grid-gap: 5px;
+  vertical-align: middle;
+  background-size: 250px 200px;
+  margin: 5px 0px;
+}
+
+.hotline-footer {
+  display: flex;
+}
+.hotline-footer > p {
+  color: #4a90e2;
+  padding: 0px 03px;
+}
 .trend-product-content {
   background-color: #ffd400;
   max-width: 100%;
@@ -1139,7 +1181,7 @@ i {
   color: #333;
   max-height: 200px;
 }
-.information-up-post{
+.information-up-post {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -1161,7 +1203,7 @@ i {
   text-align: left;
 }
 .information-up-post p:nth-child(2)::before {
-  content: '•';
+  content: "•";
   display: inline-block;
   vertical-align: middle;
   margin-right: 8px;

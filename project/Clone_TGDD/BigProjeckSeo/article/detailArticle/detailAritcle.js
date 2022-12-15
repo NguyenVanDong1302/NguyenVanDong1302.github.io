@@ -9,7 +9,7 @@ fetch(apiCurses)
     let urlStr = location.href;
     const strs = urlStr.split("id=");
     let iddetail = strs.at(-1);
-     
+
     const result = data.filter((result) => result.idNews === iddetail);
     const NewsofId = result[0];
     console.log(NewsofId);
@@ -42,3 +42,15 @@ fetch(apiCurses)
     showTitle.innerHTML = showTitles(NewsofId);
     articleContent.innerHTML = ShowArticleContent(NewsofId);
   });
+
+const ButtonMenu = document.querySelector(".button-menu-bars");
+const menubars = document.querySelector(".menu-bars-reponsive");
+const closeMenuBar = document.querySelector(".button-close-menu-bars");
+console.log(ButtonMenu);
+
+ButtonMenu.onclick = function () {
+  menubars.classList.toggle("open-menu-bars-responsive");
+};
+closeMenuBar.onclick = function () {
+  menubars.classList.toggle("open-menu-bars-responsive");
+};

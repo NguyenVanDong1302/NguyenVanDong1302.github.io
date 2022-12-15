@@ -91,7 +91,7 @@ var shoppingCart = (function () {
   obj.totalCount = function () {
     var totalCount = 0;
     for (var item in cart) {
-      console.log(cart[item].count);
+      // console.log(cart[item].count);
       totalCount += cart[item].count;
     }
     return totalCount;
@@ -250,6 +250,15 @@ document.addEventListener("DOMContentLoaded", () => {
       //   console.log("Success:", data);
       const product = document.querySelector(".detail-top");
 
+      var meta = document.createElement('meta');
+      meta.httpEquiv = "X-UA-Compatible";
+      meta.content = "IE=edge";
+      const metaTagkey = `<meta name="keyworks" content="samsung z flip4 ">`
+
+      // const headx = document.getElementsByTagName('head')
+      // console.log(metaTagkey);
+      // headx.append('<meta name="keyworks" content="samsung z flip4 ">')
+      // console.log(headx);
       function showData(product, data) {
         product.innerHTML = data.length
           ? data
@@ -569,8 +578,6 @@ document.addEventListener("DOMContentLoaded", () => {
           : "<div>Dữ liệu trống</div>";
       }
 
-
-
       const name_product_review = document.querySelector(
         ".detail-left-assess-top"
       );
@@ -590,55 +597,63 @@ document.addEventListener("DOMContentLoaded", () => {
       function showOptionCapacity(option_capacity, data) {
         const arrCapacity = data[0].option_capacity.split(";");
         option_capacity.innerHTML = arrCapacity.length
-          ? arrCapacity.map((item, index) =>{
-            return `
-            <li class="capacity-item-${index + 1} ${index == 0 ? 'active-capacity': ''}">${item}</li>
-            `
-          }).join(" ") : `<div>Dữ liệu trống</div>`
+          ? arrCapacity
+              .map((item, index) => {
+                return `
+            <li class="capacity-item-${index + 1} ${
+                  index == 0 ? "active-capacity" : ""
+                }">${item}</li>
+            `;
+              })
+              .join(" ")
+          : `<div>Dữ liệu trống</div>`;
       }
 
-    
       const option_color = document.querySelector(".option-color-items");
-      
+
       function showOptionColor(option_color, data) {
-        const arrColor= data[0].option_color.split(",");
+        const arrColor = data[0].option_color.split(",");
         option_color.innerHTML = arrColor.length
-          ? arrColor.map((item, index) =>{
-            return `
-            <li class="color-item-${index + 1} ${index == 0 ? 'active-color': ''}">${item}</li>
-            `
-          }).join(" ") : `<div>Dữ liệu trống</div>`
+          ? arrColor
+              .map((item, index) => {
+                return `
+            <li class="color-item-${index + 1} ${
+                  index == 0 ? "active-color" : ""
+                }">${item}</li>
+            `;
+              })
+              .join(" ")
+          : `<div>Dữ liệu trống</div>`;
       }
 
-      const parsePost = document.querySelector(".posts-item")
-      const NewsofId = filterData[0]
+      const parsePost = document.querySelector(".posts-item");
+      const NewsofId = filterData[0];
 
-        function ShowArticleContent(NewsofId) {
-          const newDescription = NewsofId.description.split("ketthuc");
-    
-          var htmls = newDescription.map((result) => {
-            var title = result.split("tieude");
-            if (title.length > 1) {
-              return `<h1 class="title-product-posts">${title[0]}</h1>`;
-            }
-            var sosanh = result.slice(1, 6).toLowerCase();
-            if (sosanh == "https") {
-              return `<div class="posts-product-img"><img class="image-description" src="${title}" alt=""> </div>`;
-            } else {
-              return `<p class="posts-product-content">${title}</p>`;
-            }
-          });
-          return htmls.join(" ");
-        }
-        parsePost.innerHTML = ShowArticleContent(NewsofId)
-      
-      console.log(filterData);
+      function ShowArticleContent(NewsofId) {
+        const newDescription = NewsofId.description.split("ketthuc");
+
+        var htmls = newDescription.map((result) => {
+          var title = result.split("tieude");
+          if (title.length > 1) {
+            return `<h1 class="title-product-posts">${title[0]}</h1>`;
+          }
+          var sosanh = result.slice(1, 6).toLowerCase();
+          if (sosanh == "https") {
+            return `<div class="posts-product-img"><img class="image-description" src="${title}" alt=""> </div>`;
+          } else {
+            return `<p class="posts-product-content">${title}</p>`;
+          }
+        });
+        return htmls.join(" ");
+      }
+      parsePost.innerHTML = ShowArticleContent(NewsofId);
+
       showData(product, data);
       showData(product, filterData);
       showSlider(slider, filterData);
       showSliderMini(sliderMini, filterData);
       showOptionCapacity(option_capacity, filterData);
-      showOptionColor(option_color, filterData)
+      showOptionColor(option_color, filterData);
       showPrice(right_price, filterData);
       showConfig(right_config, filterData);
       showProld(product_old, filterData);
@@ -782,60 +797,41 @@ function logicapi() {
   }
 }
 
-setTimeout(
-  function handleActive() {
-    const lenghtCapacity = document.querySelectorAll(
-      ".option-capacity ul li"
-    ).length;
-    const lenghtOptionColor = document.querySelectorAll(
-      ".option-color ul li"
-    ).length;
-    // console.log(lenghtOptionColor);
-    for (let index = 0; index < lenghtCapacity; index++) {
-      const checkCapacity = document.querySelector(`.capacity-item-${index + 1}`);
-      checkCapacity.addEventListener("click", () => {
-        const removeActive = document.querySelector(".active-capacity");
-        removeActive.classList.toggle("active-capacity");
-        checkCapacity.classList.toggle("active-capacity");
-      });
-    }
-    for (let index = 0; index < lenghtOptionColor; index++) {
-      const checkColor = document.querySelector(`.color-item-${index + 1}`);
-      checkColor.addEventListener("click", () => {
-        const removeActive = document.querySelector(".active-color");
-        if (removeActive) {
-          removeActive.classList.toggle("active-color");
-        }
-        checkColor.classList.toggle("active-color");
-      });
-    }
-  }, 2000
-)
+setTimeout(function handleActive() {
+  const lenghtCapacity = document.querySelectorAll(
+    ".option-capacity ul li"
+  ).length;
+  const lenghtOptionColor = document.querySelectorAll(
+    ".option-color ul li"
+  ).length;
+  // console.log(lenghtOptionColor);
+  for (let index = 0; index < lenghtCapacity; index++) {
+    const checkCapacity = document.querySelector(`.capacity-item-${index + 1}`);
+    checkCapacity.addEventListener("click", () => {
+      const removeActive = document.querySelector(".active-capacity");
+      removeActive.classList.toggle("active-capacity");
+      checkCapacity.classList.toggle("active-capacity");
+    });
+  }
+  for (let index = 0; index < lenghtOptionColor; index++) {
+    const checkColor = document.querySelector(`.color-item-${index + 1}`);
+    checkColor.addEventListener("click", () => {
+      const removeActive = document.querySelector(".active-color");
+      if (removeActive) {
+        removeActive.classList.toggle("active-color");
+      }
+      checkColor.classList.toggle("active-color");
+    });
+  }
+}, 2000);
 
-const ButtonMenu = document.querySelector('.button-menu-bars')
-const menubars = document.querySelector('.menu-bars-reponsive')
-const closeMenuBar = document.querySelector('.button-close-menu-bars')
-console.log(ButtonMenu);
+const ButtonMenu = document.querySelector(".button-menu-bars");
+const menubars = document.querySelector(".menu-bars-reponsive");
+const closeMenuBar = document.querySelector(".button-close-menu-bars");
 
-ButtonMenu.onclick = function(){
-  menubars.classList.toggle("open-menu-bars-responsive")
-}
-closeMenuBar.onclick = function(){
-  menubars.classList.toggle("open-menu-bars-responsive")
-}
-
-// const testHeightDetailRight = document.getElementById('detail-right')
-// console.log(testHeightDetailRight);
-// let xxxxxx = document.getElementsByClassName('main-option')
-// // console.log(testHeightDetailRight.clientHeight);
-// console.log(xxxxxx);
-// console.log(xxxxxx.offsetHeight );
-
-var offsetHeight = document.querySelector('.wapper-api').offsetHeight;
-
-console.log(offsetHeight);
-
-const swiper = new Swiper('.swiper', {
-  direction: 'vertical',
-  loop: true,
-});
+ButtonMenu.onclick = function () {
+  menubars.classList.toggle("open-menu-bars-responsive");
+};
+closeMenuBar.onclick = function () {
+  menubars.classList.toggle("open-menu-bars-responsive");
+};

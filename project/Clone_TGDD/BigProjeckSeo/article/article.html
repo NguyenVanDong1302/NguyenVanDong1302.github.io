@@ -8,27 +8,92 @@
     <script src="https://kit.fontawesome.com/3426ec3618.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./article.css">
     <link rel="stylesheet" href="../admin/style.css">
+    <link rel="stylesheet" href="./responsiveArticle.css">
+    <link rel="stylesheet" href="../detail/responsiveDetail.css">
     <title id="mainTitle">Tin tức công nghệ cập nhật 24h</title>
 </head>
 
 <body>
-    <nav>
-        <div class="container header_ct">
+    <div class="menu-bars-reponsive">
+        <div class="button-close-menu-bars"><span>X Đóng</span></div>
+        <div class="menu-category-items">
+            <ul class="list-menu-category-items">
+                <li>Điện thoại</li>
+                <li>Laptop</li>
+                <li>Tablet</li>
+                <li>Phụ kiện</li>
+                <li>Đồng hồ thông minh</li>
+                <li>Máy tính bộ</li>
+                <li>Màn hình máy tính</li>
+                <li>Máy in</li>
+                <li>Mực in</li>
+                <li>Đòng hồ thời trang</li>
+                <li>Sạc dự phòng</li>
+                <li>Tai nghe</li>
+                <li>Máy cũ giá rẻ</li>
+                <li>Sim, thẻ cào</li>
+                <li>Dịch vụ, tiện ích</li>
+            </ul>
+        </div>
+
+        <div class="group-category-items">
+            <div class="group-product-new">
+                <p>Nhóm hàng mới</p>
+
+                <ul class="group-product-new-items">
+                    <li>Máy chiếu</li>
+                    <li>Thiết bị nhà thông minh</li>
+                    <li>Màn hình máy tính</li>
+                    <li>Thẻ cào giảm đến 3%</li>
+                </ul>
+
+            </div>
+            <div class="group-product-new">
+                <p class="technogory-world-title">Thế giới công nghệ</p>
+                <ul class="group-product-new-items">
+                    <li>24h Công nghệ</li>
+                    <li>Game App</li>
+                    <li>Hỏi đáp</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-menu-bars">
             <ul>
-                <li> <a href="../index/homePage.html"> <img style="width: 150px"
-                            src="https://cdn.haitrieu.com/wp-content/uploads/2021/11/Logo-The-Gioi-Di-Dong-MWG-B-H.png"
-                            alt=""></a>
+                <li><a href="#">Lịch sử mua hàng</a></li>
+                <li>Tổng đài 1800.1060 (7:00 - 22:00)</li>
+                <li>Xem 3375 siêu thị (8:00 - 22:00) </li>
+            </ul>
+        </div>
+    </div>
+    <!-- </div> -->
+    <nav>
+        <div class="container" id="container">
+            <ul class="list-categorys">
+                <li>
+                    <a href="../index/homePage.html" class="header__logo">
+                        <i class="iconnewglobal-logo mobile"></i>
+                    </a>
                 </li>
-                <li id="address-form"><a href="#"> Hà Nội <i class="fa-solid fa-angle-down"></i></a></li>
+
+                <li id="address-form">
+                    <i class="icon-map-header fa-regular fa-location-dot"></i>
+                    <a href="#"> Hà Nội </a>
+                    <i class="icon-map-header2 fa-solid fa-angle-down"></i>
+
+                </li>
                 <li><input type="text" placeholder="Bạn tìm gì....."> <i class="fa-solid fa-magnifying-glass"></i></li>
                 <li><a href=""></a><button data-toggle="modal" data-target="#cart">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        Giỏ hàng <span class="total-count"></span>
+                        <i class="fa-light fa-cart-shopping"></i>
+                        <span class="title-cart">Giỏ hàng </span>
+                        <span class="total-count"></span>
                     </button></li>
-                <li><a href="">Lịch sử <br> đơn hàng</a></li>
-                <li><a href="">24h Công nghệ </a></li>
-                <li><a href="../../login/login.html">Đăng nhập / Đăng ký</a></li>
+                <li><a href="">Lịch sử đơn hàng</a></li>
+                <li><a href="../article/article.html">24h Công nghệ </a></li>
+                <li><a href="../../login/login.html">Đăng nhập / Đăng ký </a></li>
                 <li><a href="">Game app </a></li>
+
+                <li class="button-menu-bars"><i class="iconnewglobal-menu"></i>
+                </li>
                 <div class="address-form">
                     <div class="address-form-content">
                         <h2>Chọn địa chỉ nhận hàng <span id="ad-close">X Đóng</span></h2>
@@ -52,15 +117,16 @@
 
         </div>
     </nav>
+
     <section class="menu-bar">
         <div class="container">
             <div class="menu-bar-container">
                 <ul>
-                    <li><a href=""><i class="fa-light fa-phone"></i> Điện thoại</a></li>
-                    <li> <a href=""><i class="fa-light fa-laptop"></i> Laptop</a></li>
-                    <li><a href=""><i class="fa-regular fa-tablet"></i> Tablet</a></li>
-                    <li><a href=""><i class="fa-light fa-headphones"></i>Phụ kiện <i
-                                class="fa-solid fa-angle-down"></i></a>
+                    <li><a href=""><i class="icon-of-menu-bar fa-light fa-phone"></i> Điện thoại</a></li>
+                    <li> <a href=""><i class="icon-of-menu-bar fa-light fa-laptop"></i> Laptop</a></li>
+                    <li><a href=""><i class="icon-of-menu-bar fa-light fa-tablet"></i> Tablet</a></li>
+                    <li><a href=""><i class="icon-of-menu-bar fa-light fa-headphones"></i>Phụ kiện <i
+                                class="icon-of-menu-bar fa-solid fa-angle-down"></i></a>
                         <div class="submenu">
                             <ul>
                                 <p>PHỤ KIỆN DI ĐỘNG</p>
@@ -112,9 +178,9 @@
                         </div>
 
                     </li>
-                    <li><a href=""> <i class="fa-light fa-clock"></i> Đồng hồ</a></li>
-                    <li><a href=""><i class="fa-light fa-computer"></i>PC, Máy in <i
-                                class="fa-solid fa-angle-down"></i></a>
+                    <li><a href=""> <i class="icon-of-menu-bar fa-light fa-clock"></i> Đồng hồ</a></li>
+                    <li><a href=""><i class="icon-of-menu-bar fa-light fa-computer"></i>PC, Máy in <i
+                                class="icon-of-menu-bar fa-solid fa-angle-down"></i></a>
 
                         <div class="submenu submenubonus">
                             <ul>
@@ -132,9 +198,8 @@
                     <li><a href="">Sim, thẻ cào</a></li>
                     <li><a href="">Dịch vụ tiện ích</a></li>
                 </ul>
+
             </div>
-
-
         </div>
     </section>
 
@@ -160,10 +225,10 @@
         <div class="main-article">
             <div class="article-left">
                 <div id="article-left-header" class="article-left-header">
-                   
+
                 </div>
                 <div class="article-left-content">
-                   
+
                 </div>
             </div>
             <div class="article-right">
