@@ -1,4 +1,4 @@
-var apiCurses = "https://632fc662591935f3c8851f34.mockapi.io/api/News";
+var apiCurses = "https://6397f76c86d04c7633a1c4d5.mockapi.io/apiNews";
 var main = document.getElementById("testDescription");
 var articleContent = document.querySelector(".article-content");
 var showTitle = document.querySelector(".article-title");
