@@ -279,7 +279,7 @@ select {
 }
 
 .menu-bars-reponsive{
-  display: flex;
+  display: none;
   flex-direction: column;
   opacity: 0;
   transform: translateX(100%);
