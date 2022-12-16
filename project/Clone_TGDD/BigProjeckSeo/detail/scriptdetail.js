@@ -638,7 +638,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log();
             const nameProduct = filterData[0].name
             const newTitle = title[0].replace(nameProduct, function(){
-              return `<a class="seo-name-product" href="/">${nameProduct}</a>`
+              return `<a class="seo-name-product" href="https://www.thegioididong.com/dtdd/samsung-galaxy-z-flip4">${nameProduct}</a>`
             });
             console.log(newTitle);
             return `<h1 class="title-product-posts">${newTitle}</h1>`;
