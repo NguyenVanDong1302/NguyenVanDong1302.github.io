@@ -367,7 +367,13 @@ body {
 
 
 /* =================== block promo =================== */
-
+.title-product-posts,
+.seo-name-product{
+  font-size: 1.5rem;
+}
+.seo-name-product{
+  color: #1877F2;
+}
 .block-promo-top h1 {
   font-size: 14px;
 }

@@ -17,7 +17,6 @@ fetch(apiCurses)
     function showTitles(NewsofId) {
       return `<h1 class="title">${NewsofId.title}</h1>
         <span class="information-up-post"><p>${NewsofId.userPost}</p> <p>${NewsofId.time} giờ trước</p></span>
-        <img class="image-description" src = '${NewsofId.imageIndex}' >
         `;
     }
 
@@ -30,8 +29,9 @@ fetch(apiCurses)
           return `<h1 class="title">${title[0]}</h1>`;
         }
         var sosanh = result.slice(1, 6).toLowerCase();
+        console.log(result);
         if (sosanh == "https") {
-          return `<div class="imgwrap"><img class="image-description" src="${title}" alt=""> </div>`;
+          return `<div class="imgwrap"><img class="image-description" src="${title}" alt=""></div>`;
         } else {
           return `<p class="text-description">${title}</p>`;
         }

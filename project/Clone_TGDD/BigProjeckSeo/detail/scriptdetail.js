@@ -250,10 +250,10 @@ document.addEventListener("DOMContentLoaded", () => {
       //   console.log("Success:", data);
       const product = document.querySelector(".detail-top");
 
-      var meta = document.createElement('meta');
+      var meta = document.createElement("meta");
       meta.httpEquiv = "X-UA-Compatible";
       meta.content = "IE=edge";
-      const metaTagkey = `<meta name="keyworks" content="samsung z flip4 ">`
+      const metaTagkey = `<meta name="keyworks" content="samsung z flip4 ">`;
 
       // const headx = document.getElementsByTagName('head')
       // console.log(metaTagkey);
@@ -628,14 +628,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const parsePost = document.querySelector(".posts-item");
       const NewsofId = filterData[0];
-
+      
       function ShowArticleContent(NewsofId) {
         const newDescription = NewsofId.description.split("ketthuc");
 
         var htmls = newDescription.map((result) => {
           var title = result.split("tieude");
           if (title.length > 1) {
-            return `<h1 class="title-product-posts">${title[0]}</h1>`;
+            console.log();
+            const nameProduct = filterData[0].name
+            const newTitle = title[0].replace(nameProduct, function(){
+              return `<a class="seo-name-product" href="/">${nameProduct}</a>`
+            });
+            console.log(newTitle);
+            return `<h1 class="title-product-posts">${newTitle}</h1>`;
           }
           var sosanh = result.slice(1, 6).toLowerCase();
           if (sosanh == "https") {
