@@ -173,6 +173,24 @@ body h1 h2 {
 .alhr-content-title:hover{
     color: #288ad6;
 }
+[class^="iconnewglobal-"], [class*="iconnewglobal-"]{
+  background-image: url(//cdn.tgdd.vn/mwgcart/mwg-site/ContentMwg/images/homev2/desk/iconnew.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  vertical-align: middle;
+  background-size: 310px 257px;
+}
+.iconnewglobal-logo{
+  background-position: 0 -176px;
+  width: 228px;
+  height: 40px;
+}
+.iconnewglobal-menu{
+  display: none;
+}
 
 .article-left-content {
   /* margin: px; */
