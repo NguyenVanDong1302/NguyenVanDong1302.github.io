@@ -1,0 +1,129 @@
+.carousel {
+    width: 510px;
+    height: 510px;
+    .carousel-inner {
+        width: 510px;
+        height: 510px;
+        max-height: 510px;
+        max-width: 510px;
+        // width: 100%;
+        .carousel-item {
+            max-width: 510px;
+            width: 100%;
+        }
+        img {
+            // max-width: 510px;
+            // width: 100%;
+            height: unset;
+        }
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        color: #111;
+        font-size: 30px;
+        pointer-events: none;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+    .carousel-control-prev {
+        transform: translateX(15%);
+    }
+    .carousel-control-next {
+        transform: translateX(-15%);
+    }
+    &:hover {
+        .carousel-control-prev,
+        .carousel-control-next {
+            opacity: 1;
+            pointer-events: unset;
+            // transform: 0;
+        }
+        .carousel-control-prev {
+            transform: translateX(0);
+        }
+        .carousel-control-next {
+            transform: translateX(0);
+        }
+    }
+}
+
+.product-main {
+    .product-sidebar-small {
+        .tag-product {
+            .name-product,
+            .h5 {
+                font-size: 14.4px;
+                color: #111111;
+            }
+        }
+    }
+}
+
+.container {
+    .nav-pills {
+        padding: 10px 0;
+        ul {
+            margin-bottom: 0;
+        }
+        li {
+            color: #e7e7ee;
+            cursor: pointer;
+            span {
+                background-color: transparent;
+            }
+            .nav-link {
+                color: #7d7d7d;
+                margin: 5px 0;
+                padding: 5px 0;
+            }
+            .active {
+                background-color: transparent;
+                color: #111111;
+                position: relative;
+                &::after {
+                    content: "";
+                    background-color: #446084;
+                    position: absolute;
+                    height: 3px;
+                    width: 100%;
+                    left: 0;
+                    top: 0;
+                }
+            }
+            + li {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .tab-content {
+        .tab-description {
+            color: #777777;
+        }
+        .tab-review {
+            span {
+                color: #777777;
+                a {
+                    color: #111111;
+                }
+            }
+            .tab-review__top {
+                h4 {
+                    color: #555555;
+                }
+            }
+            .user-review {
+                display: flex;
+                align-items: center;
+                border: 3px solid #446084;
+                margin-top: 20px;
+                .user-review__info {
+                    padding: 15px 30px 30px;
+                    h4 {
+                        color: #555555;
+                    }
+                }
+            }
+        }
+    }
+}

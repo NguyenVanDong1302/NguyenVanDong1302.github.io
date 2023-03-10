@@ -1,0 +1,108 @@
+.carousel {
+  width: 510px;
+  height: 510px;
+}
+.carousel .carousel-inner {
+  width: 510px;
+  height: 510px;
+  max-height: 510px;
+  max-width: 510px;
+}
+.carousel .carousel-inner .carousel-item {
+  max-width: 510px;
+  width: 100%;
+}
+.carousel .carousel-inner img {
+  height: unset;
+}
+.carousel .carousel-control-prev,
+.carousel .carousel-control-next {
+  color: #111;
+  font-size: 30px;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.carousel .carousel-control-prev {
+  transform: translateX(15%);
+}
+.carousel .carousel-control-next {
+  transform: translateX(-15%);
+}
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 1;
+  pointer-events: unset;
+}
+.carousel:hover .carousel-control-prev {
+  transform: translateX(0);
+}
+.carousel:hover .carousel-control-next {
+  transform: translateX(0);
+}
+
+.product-main .product-sidebar-small .tag-product .name-product,
+.product-main .product-sidebar-small .tag-product .h5 {
+  font-size: 14.4px;
+  color: #111111;
+}
+
+.container .nav-pills {
+  padding: 10px 0;
+}
+.container .nav-pills ul {
+  margin-bottom: 0;
+}
+.container .nav-pills li {
+  color: #e7e7ee;
+  cursor: pointer;
+}
+.container .nav-pills li span {
+  background-color: transparent;
+}
+.container .nav-pills li .nav-link {
+  color: #7d7d7d;
+  margin: 5px 0;
+  padding: 5px 0;
+}
+.container .nav-pills li .active {
+  background-color: transparent;
+  color: #111111;
+  position: relative;
+}
+.container .nav-pills li .active::after {
+  content: "";
+  background-color: #446084;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.container .nav-pills li + li {
+  margin-left: 10px;
+}
+.container .tab-content .tab-description {
+  color: #777777;
+}
+.container .tab-content .tab-review span {
+  color: #777777;
+}
+.container .tab-content .tab-review span a {
+  color: #111111;
+}
+.container .tab-content .tab-review .tab-review__top h4 {
+  color: #555555;
+}
+.container .tab-content .tab-review .user-review {
+  display: flex;
+  align-items: center;
+  border: 3px solid #446084;
+  margin-top: 20px;
+}
+.container .tab-content .tab-review .user-review .user-review__info {
+  padding: 15px 30px 30px;
+}
+.container .tab-content .tab-review .user-review .user-review__info h4 {
+  color: #555555;
+}/*# sourceMappingURL=Detail.css.map */

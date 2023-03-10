@@ -1,0 +1,30 @@
+:root {
+    --color-top-header: #446084;
+    --color-text-top-header: rgba(255, 255, 255, 0.8);
+    --color-background-border: rgba(255, 255, 255, 0.2);
+}
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffffcc;
+}
+
+.jcc {
+    justify-content: center;
+}
+.aic {
+    align-items: center;
+}
+.jcsb {
+    justify-content: space-between;
+}
+.jcfs {
+    justify-content: flex-start;
+}
+
+input {
+
+}
